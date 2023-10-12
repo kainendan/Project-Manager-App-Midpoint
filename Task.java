@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public abstract class Task extends Column{
-    // class variables
+    // Class variables
     private String taskName;
     private String taskDesc;
     private int taskPrio;
@@ -46,9 +46,12 @@ public abstract class Task extends Column{
  * @return boolean whether they have the correct privacy level or not
  */
     public boolean checkPrivacy(User userType) {
+        /*
         if(userType.getPrivacy() == taskPrivacy)
             return true;
         else
             return false;
+        */
+        return false;
     }
 }
