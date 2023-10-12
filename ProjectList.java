@@ -6,7 +6,7 @@ public class ProjectList {
 
 
     public ProjectList(){
-        
+        //project = new ArrayList<Project>
     }
 
     public ProjectList getInstance(){
