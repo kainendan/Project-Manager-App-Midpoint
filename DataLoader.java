@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class DataLoader extends DataConstraints {
+public class DataLoader extends DataConstants {
     //
-    public ArrayList<Projects> GetProjects() {
+    public ArrayList<Project> GetProjects() {
         return null;
     }
     public ArrayList<User> GetUsers() {
