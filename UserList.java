@@ -24,6 +24,15 @@ public class UserList {
         users.add(new User(userName, password, firstName, lastName, email, privacyLevel));
     }
 
+    public static boolean isValidLogin(String userName, String password) {
+        for(User user : users) {
+            if(user.getUserName().equals(userName) && user.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void logout() {
         DataWriter.saveUsers();
     }
