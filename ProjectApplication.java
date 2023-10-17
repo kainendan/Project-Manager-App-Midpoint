@@ -36,8 +36,8 @@ public class ProjectApplication {
      * @return The newly created User object.
      */
     public User signUp() {
-        
-        return new User(); 
+        //return new User();
+        return null; 
     }
 
     /**
@@ -68,8 +68,8 @@ public class ProjectApplication {
      * @return The newly created User object.
      */
     public User createAccount(String firstName, String lastName) {
-      
-        return new User(); 
+        //return new User();
+        return null;
     }
 
     /**

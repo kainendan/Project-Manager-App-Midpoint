@@ -10,12 +10,5 @@ public class ProjectManagerUI {
     public void displayMenu() {
 
     }
-
-    public static void main(String[] args) {
-
-    }
     //May need to add more classes soon
-
-
-    
 }

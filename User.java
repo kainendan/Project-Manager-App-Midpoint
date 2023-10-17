@@ -50,6 +50,7 @@ public class User {
 
     // Convert the User object to a JSON representation
     public JSONObject toJSON() {
+        /*
         JSONObject jsonUser = new JSONObject();
         jsonUser.put("userName", userName);
         jsonUser.put("password", password);
@@ -58,9 +59,11 @@ public class User {
         jsonUser.put("email", email);
         jsonUser.put("privacyLevel", privacyLevel);
         return jsonUser;
+        */
     }
 
     public static void main(String[] args) {
+        /*
         User user = new User("john_doe", "password123", "John", "Doe", "john@example.com", 3);
 
         // Create a JSON object representing the user
@@ -73,6 +76,7 @@ public class User {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
     }
 }
 
