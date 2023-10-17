@@ -1,22 +1,30 @@
 import java.util.ArrayList;
 
 public class UserList {
-    public static UserList userList;
-    private ArrayList<User> users;
+    private static UserList userList = null;
+    private static ArrayList<User> users = new ArrayList<>();
 
-    public UserList() {
+    private UserList() {
         users = new ArrayList<User>();
     }
 
-    public UserList getInstance() {
+    public static UserList getInstance() {
         if(userList == null) {
-            System.out.println("Creating a new user ");
+            System.out.println("Creating a new user account: ");
             userList = new UserList();
         }
-        return null;
+        return userList;
     }
 
-    public User getUser(String project) {
-        // TODO implement here
+    public ArrayList<User> getUserList() {
+        return users;
+    }
+
+    public static void addUser(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
+        users.add(new User(userName, password, firstName, lastName, email, privacyLevel));
+    }
+
+    public void logout() {
+        DataWriter.saveUsers();
     }
 }
