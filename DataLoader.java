@@ -38,7 +38,7 @@ public class DataLoader extends DataConstants {
 		
 		return null;
     }
-    }
+    
     public ArrayList<User> GetUsers() {
        ArrayList<User> users = new ArrayList<User>();
 		
