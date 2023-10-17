@@ -5,16 +5,18 @@ public class UserList {
     private ArrayList<User> users;
 
     public UserList() {
-        //users = new ArrayList<User>();
+        users = new ArrayList<User>();
     }
 
     public UserList getInstance() {
-        // TODO implement here  
+        if(userList == null) {
+            System.out.println("Creating a new user ");
+            userList = new UserList();
+        }
         return null;
     }
 
     public User getUser(String project) {
         // TODO implement here
-        return null;
     }
 }
