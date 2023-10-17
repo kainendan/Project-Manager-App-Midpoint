@@ -25,4 +25,11 @@ public class ProjectManagerUI {
 
     }
         //May need to add more classes soon
+    public void login() {
+
+    }
+
+    public void signUp() {
+        
+    }
 }
