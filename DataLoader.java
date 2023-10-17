@@ -8,11 +8,13 @@ import java.util.UUID;
 
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
-
+        GetUsers();
+        GetProjects();
+      
     }
-    public ArrayList<Project> GetProjects() {
+    public static ArrayList<Project> GetProjects() {
         ArrayList<Project> project = new ArrayList<Project>();
-        ArrayList<User> user = new ArrayList<User>();
+        //ArrayList<User> user = new ArrayList<User>();
 		
 		try {
 			//FileReader reader = new FileReader(PROJECT_FILE_NAME);
@@ -21,7 +23,7 @@ public class DataLoader extends DataConstants {
 			
 			//for(int i=0; i < peopleJSON.size(); i++) {
 				//JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				//UUID id = UUID.fromString((String)personJSON.get(USER_ID));
+				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
 				String projectName = "Temp_projectName";//(String)personJSON.get(PROJECT_NAME);
 				String projectdes = "description goes here";//(String)personJSON.get(PROJECT_DES);
 				String projectAuthor = "temp_User"; //(String)personJSON.get(PROJECT_AUTHOR);
@@ -39,7 +41,7 @@ public class DataLoader extends DataConstants {
 		return null;
     }
     
-    public ArrayList<User> GetUsers() {
+    public static ArrayList<User> GetUsers() {
        ArrayList<User> users = new ArrayList<User>();
 		
 		try {
