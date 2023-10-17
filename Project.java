@@ -5,12 +5,13 @@ public class Project{
     private String projectName;
     private String projectDesc;
     private ArrayList<Comment> projectThread;
-    private User projectAuthor;
+    private String projectAuthor;
     private ArrayList<Column> columns;
     private ArrayList<String> tasks;
     private ArrayList<String> directions;
+    private User user;
 
-    public Project(String projectName, String projectDesc, User projectAuthor){
+    public Project(String projectName, String projectDesc, String projectAuthor) {
         this.projectName = projectName;
         this.projectDesc = projectDesc;
         this.projectAuthor = projectAuthor;
@@ -32,6 +33,9 @@ public class Project{
         for (String task : tasks){
             System.out.println(task);
         }
+    }
+    public String getProjectAuthor() {
+        return user.getUserName();
     }
 
 }

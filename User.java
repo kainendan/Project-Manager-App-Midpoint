@@ -1,6 +1,6 @@
 // Nick Arboscello
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
+//import org.json.simple.JSONObject;
+//import org.json.simple.JSONValue;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -49,16 +49,16 @@ public class User {
     }
 
     // Convert the User object to a JSON representation
-    public JSONObject toJSON() {
-        JSONObject jsonUser = new JSONObject();
-        jsonUser.put("userName", userName);
-        jsonUser.put("password", password);
-        jsonUser.put("firstName", firstName);
-        jsonUser.put("lastName", lastName);
-        jsonUser.put("email", email);
-        jsonUser.put("privacyLevel", privacyLevel);
-        return jsonUser;
-    }
+    //public JSONObject toJSON() {
+        //JSONObject jsonUser = new JSONObject();
+        //jsonUser.put("userName", userName);
+        //jsonUser.put("password", password);
+        //jsonUser.put("firstName", firstName);
+        //jsonUser.put("lastName", lastName);
+        //jsonUser.put("email", email);
+        //jsonUser.put("privacyLevel", privacyLevel);
+        //return jsonUser;
+    //}
 
 }
 
