@@ -6,46 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class User {
-<<<<<<< HEAD
-
-    private String username;
-    private String password;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private int privacyLevel;
-
-    public User(String username, String password, String email, String firstName, String lastName, int privacyLevel) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.privacyLevel = privacyLevel;
-    }
-
-    public boolean getPassword() {
-        return false;
-    }
-
-    public String getFirstName() {
-        return null;
-    }
-
-    public String getLastName() {
-        return null;
-    }
-
-    public String getEmail() {
-        return null;
-    }
-
-    public int getPrivacyLevel() {
-        return 0;
-    }
-
-
-=======
     private String userName;
     private String password;
     private String firstName;
@@ -90,6 +50,7 @@ public class User {
 
     // Convert the User object to a JSON representation
     public JSONObject toJSON() {
+        /*
         JSONObject jsonUser = new JSONObject();
         jsonUser.put("userName", userName);
         jsonUser.put("password", password);
@@ -98,9 +59,11 @@ public class User {
         jsonUser.put("email", email);
         jsonUser.put("privacyLevel", privacyLevel);
         return jsonUser;
+        */
     }
 
     public static void main(String[] args) {
+        /*
         User user = new User("john_doe", "password123", "John", "Doe", "john@example.com", 3);
 
         // Create a JSON object representing the user
@@ -113,7 +76,7 @@ public class User {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
     }
->>>>>>> e169168dbc3eba94d71f53d05a0ad50351b14bba
 }
 
