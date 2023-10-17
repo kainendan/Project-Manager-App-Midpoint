@@ -8,7 +8,7 @@ public class UserList {
         users = new ArrayList<User>();
     }
 
-    public UserList getInstance() {
+    public static UserList getInstance() {
         if(userList == null) {
             System.out.println("Creating a new user ");
             userList = new UserList();
