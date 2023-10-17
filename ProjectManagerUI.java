@@ -1,31 +1,20 @@
 import java.util.Scanner;
-
-
-   
 public class ProjectManagerUI {
-    private Scanner scanner;
-    private ProjectApplication application;
 
-    public ProjectManagerUI() {
-        scanner = new Scanner(System.in);
-    }
-
-    public void run() {
-         
-    }
-
-    public void displayMenu() {
-
-    }
-    //May need to add more classes soon
-}
+    private Scanner scanner = new Scanner(System.in);
 
     public void signUp() {
-        
+         UserList userList = UserList.getInstance();
+
+            String userName = getField("Enter your username");
+            String password = getField("Enter your password");
+            String firstName = getField("Enter your first name");
+            String lastName = getField("Enter your last name");
+            String email = getField("Enter your email");
+            int privacyLevel = Integer.parseInt(getField("Enter your privacy level"));
+
+            UserList.addUser(userName, password, firstName, lastName, email, privacyLevel);
     }
-<<<<<<< HEAD
-}
-=======
 
     public void logIn() {
         UserList userList = UserList.getInstance();
@@ -45,4 +34,3 @@ public class ProjectManagerUI {
         return scanner.nextLine();
     }
 }
->>>>>>> 650206de41b063dbe7742bc3d83b2b4cfa1a60c3
