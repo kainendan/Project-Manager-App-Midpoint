@@ -23,7 +23,7 @@ public class DataLoader extends DataConstants {
 			
 			//for(int i=0; i < peopleJSON.size(); i++) {
 				//JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
+				//UUID id = UUID.fromString((String)personJSON.get(USER_ID));
 				String projectName = "Temp_projectName";//(String)personJSON.get(PROJECT_NAME);
 				String projectdes = "description goes here";//(String)personJSON.get(PROJECT_DES);
 				String projectAuthor = "temp_User"; //(String)personJSON.get(PROJECT_AUTHOR);
