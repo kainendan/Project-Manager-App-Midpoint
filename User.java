@@ -4,8 +4,10 @@
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.UUID;
 
 public class User {
+    private UUID id;
     private String userName;
     private String password;
     private String firstName;
@@ -14,6 +16,7 @@ public class User {
     private int privacyLevel;
 
     public User(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
+        this.id = UUID.randomUUID();
         this.userName = userName;
         this.password = password;
         this.firstName = firstName;
@@ -21,6 +24,16 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
+    public User(UUID id, String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.privacyLevel = privacyLevel;
+    }
+
 
     // Getters for the user's properties
 
