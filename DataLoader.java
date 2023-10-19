@@ -1,11 +1,12 @@
+//@author RJ Allen
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.UUID;
 
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
-//import org.json.simple.parser.JSONParser;
-//
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;;
+
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
         GetUsers();
@@ -57,7 +58,7 @@ public class DataLoader extends DataConstants {
 				String firstName = (String)personJSON.get(USER_FIRST_NAME);
 				String lastName = (String)personJSON.get(USER_LAST_NAME);
                 String password = (String)personJSON.get(USER_PASSWORD);
-				int privacy = users.getPrivacy();
+				int privacy = (String)personJSON.get(USER_PRIVACY);
 				String email = (String)personJSON.get(USER_EMAIL);
 				
                 // add id when it can
