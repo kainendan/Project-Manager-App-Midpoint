@@ -33,9 +33,13 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
+    
 
 
     // Getters for the user's properties
+    public UUID getId() {
+        return id;
+    }
 
     public String getUserName() {
         return userName;
