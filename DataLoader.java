@@ -34,7 +34,7 @@ public class DataLoader extends DataConstants {
                 // add id when it can
 				project.add(new Project(projectName, projectdes, projectAuthor));
 			}
-			}
+			
 			
 			return project;
 			
@@ -43,7 +43,7 @@ public class DataLoader extends DataConstants {
 		}
 		
 		return null;
-    }
+	}
     
     public static ArrayList<User> GetUsers() {
        ArrayList<User> users = new ArrayList<User>();
