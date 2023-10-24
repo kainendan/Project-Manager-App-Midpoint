@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Project{
 
+    private UUID id;
     private String projectName;
     private String projectDesc;
     private ArrayList<Comment> projectThread;
@@ -12,6 +14,7 @@ public class Project{
     private User user;
 
     public Project(String projectName, String projectDesc, String projectAuthor) {
+        this.id = UUID.randomUUID();
         this.projectName = projectName;
         this.projectDesc = projectDesc;
         this.projectAuthor = projectAuthor;
@@ -20,6 +23,17 @@ public class Project{
         this.tasks = new ArrayList<String>();
         this.directions = new ArrayList<String>();
     }
+    public Project(UUID id, String projectName, String projectDesc, String projectAuthor) {
+        this.id = id;
+        this.projectName = projectName;
+        this.projectDesc = projectDesc;
+        this.projectAuthor = projectAuthor;
+        this.projectThread = new ArrayList<Comment>();
+        this.columns = new ArrayList<Column>();
+        this.tasks = new ArrayList<String>();
+        this.directions = new ArrayList<String>();
+    }
+
 
     public String getProjectName(){
         return projectName;
@@ -38,4 +52,8 @@ public class Project{
         return user.getUserName();
     }
 
+    @Override
+    public String toString() {
+        return "User [userId=" + UUID.randomUUID() + ", username=" + projectName + "]";
+    }
 }

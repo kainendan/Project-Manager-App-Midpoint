@@ -27,6 +27,7 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < projJSON.size(); i++) {
 				JSONObject projectJSON = (JSONObject)projJSON.get(i);
+				//UUID id = UUID.fromString((String)projectJSON.get(USER_ID));
 				String projectName = (String)projectJSON.get(PROJECT_NAME);
 				String projectdes = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				String projectAuthor = (String)projectJSON.get(PROJECT_AUTHOR);
@@ -55,7 +56,7 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < peopleJSON.size(); i++) {
 				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				//UUID id = UUID.fromString((String)personJSON.get(USER_ID));
+				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
 				String userName = (String)personJSON.get(USER_USER_NAME);
 				String firstName = (String)personJSON.get(USER_FIRST_NAME);
 				String lastName = (String)personJSON.get(USER_LAST_NAME);
@@ -64,7 +65,7 @@ public class DataLoader extends DataConstants {
 				String email = (String)personJSON.get(USER_EMAIL);
 				
                 // add id when it can
-				users.add(new User(userName, password, firstName, lastName, email, 1));
+				users.add(new User(id, userName, password, firstName, lastName, email, 1));
 			}
 			
 			return users;
