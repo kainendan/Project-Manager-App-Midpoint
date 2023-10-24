@@ -9,10 +9,12 @@ import org.json.simple.parser.JSONParser;;
 
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
-        GetUsers();
-        GetProjects();
+      ArrayList<User> users = GetUsers();
+	  for(int i= 0 ; i < users.size(); i++ ){
+		System.out.println(users.get(i));
+	  }
       
-    }
+    }//
     public static ArrayList<Project> GetProjects() {
         ArrayList<Project> project = new ArrayList<Project>();
         //FileReader reader = new FileReader(PROJECT_FILE_NAME)
