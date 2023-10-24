@@ -60,6 +60,11 @@ public class ProjectApplication {
         }
     }
 
+    /**
+     * Gets a field from the user.
+     * @param prompt
+     * @return
+     */
     private String getField(String prompt) {
         System.out.println(prompt + ": ");
         return scanner.nextLine();
