@@ -1,0 +1,17 @@
+[
+  {
+    "projectName": "Project 1",
+    "projectDescription": "This is project 1",
+    "projectAuthor": "Bob Smith"
+  },
+  {
+    "projectName": "Project 2",
+    "projectDescription": "This is project 2",
+    "projectAuthor": "John Doe"
+  },
+  {
+    "projectName": "Project 3",
+    "projectDescription": "This is project 3",
+    "projectAuthor": "Jane Doe"
+  }
+]
