@@ -27,13 +27,13 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < projJSON.size(); i++) {
 				JSONObject projectJSON = (JSONObject)projJSON.get(i);
-				//UUID id = UUID.fromString((String)projectJSON.get(USER_ID));
+				UUID id = UUID.fromString((String)projectJSON.get(USER_ID));
 				String projectName = (String)projectJSON.get(PROJECT_NAME);
 				String projectdes = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				String projectAuthor = (String)projectJSON.get(PROJECT_AUTHOR);
 				
                 // add id when it can
-				project.add(new Project(projectName, projectdes, projectAuthor));
+				project.add(new Project(id, projectName, projectdes, projectAuthor));
 			}
 			
 			

@@ -35,6 +35,9 @@ public class Project{
     }
 
 
+    public UUID getId() {
+        return id;
+    }
     public String getProjectName(){
         return projectName;
     }
