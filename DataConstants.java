@@ -7,6 +7,7 @@ public abstract class DataConstants {
 	protected static final String USER_PASSWORD = "password";
 	protected static final String USER_EMAIL = "email";
 	protected static final String USER_PRIVACY = "privacylevel";
+	protected static final String PROJECT_FILE_NAME = "json/proj.temp.json";
 	protected static final String PROJECT_NAME = "projectName";
 	protected static final String PROJECT_DESCRIPTION = "projectDescription";
 	protected static final String PROJECT_AUTHOR = "projectAuthor";
