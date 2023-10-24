@@ -1,5 +1,6 @@
 //Nick Arboscello
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The ProjectApplication class represents the main application for managing projects, users, and related functionality.
@@ -9,6 +10,7 @@ public class ProjectApplication {
     private UserList userList;
     private User user;
   
+    private Scanner scanner = new Scanner(System.in);
     /**
      * Constructs a new ProjectApplication object.
      */
@@ -19,25 +21,53 @@ public class ProjectApplication {
     }
 
     /**
+     * Creates a new user account.
+     *
+     * @param firstName The first name of the user.
+     * @param lastName  The last name of the user.
+     * @return The newly created User object.
+     */
+    public void signUp() {
+        UserList userList = UserList.getInstance();
+
+           String userName = getField("Enter your username");
+           String password = getField("Enter your password");
+           String firstName = getField("Enter your first name");
+           String lastName = getField("Enter your last name");
+           String email = getField("Enter your email");
+           int privacyLevel = Integer.parseInt(getField("Enter your privacy level"));
+
+           UserList.addUser(userName, password, firstName, lastName, email, privacyLevel);
+   }
+
+    /**
      * Attempts to log in a user with the given username and password.
      *
      * @param username The username of the user.
      * @param password The password of the user.
      * @return The User object if login is successful, or null if login fails.
      */
-    public User login(String username, String password) {
-       
-        return null; 
+    public void logIn() {
+        UserList userList = UserList.getInstance();
+
+        String userName = getField("Enter your username");
+        String password = getField("Enter your password");
+
+        if (userList.isValidLogin(userName, password)) {
+            System.out.println("Login successful!");
+        } else {
+            System.out.println("Invalid username or password");
+        }
     }
 
     /**
-     * Creates a new user account.
-     *
-     * @return The newly created User object.
+     * Gets a field from the user.
+     * @param prompt
+     * @return
      */
-    public User signUp() {
-        //return new User();
-        return null; 
+    private String getField(String prompt) {
+        System.out.println(prompt + ": ");
+        return scanner.nextLine();
     }
 
     /**
@@ -60,17 +90,7 @@ public class ProjectApplication {
         return new ArrayList<>(); 
     }
 
-    /**
-     * Creates a new user account.
-     *
-     * @param firstName The first name of the user.
-     * @param lastName  The last name of the user.
-     * @return The newly created User object.
-     */
-    public User createAccount(String firstName, String lastName) {
-        //return new User();
-        return null;
-    }
+    
 
     /**
      * Creates a new project.
