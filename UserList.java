@@ -1,4 +1,3 @@
-// RJ Allen
 import java.util.ArrayList;
 
 public class UserList {
