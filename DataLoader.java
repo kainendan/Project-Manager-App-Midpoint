@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;;
+import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
@@ -14,7 +14,8 @@ public class DataLoader extends DataConstants {
 		System.out.println(users.get(i));
 	  }
       
-    }//
+    }
+
     public static ArrayList<Project> GetProjects() {
 		ArrayList<Project> project = new ArrayList<Project>();
 		
@@ -32,6 +33,7 @@ public class DataLoader extends DataConstants {
 				
                 // add id when it can
 				project.add(new Project(projectName, projectdes, projectAuthor));
+			}
 			}
 			
 			return project;
