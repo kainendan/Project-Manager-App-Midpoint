@@ -61,6 +61,11 @@ public class User {
         return privacyLevel;
     }
 
+    @Override
+    public String toString() {
+        return "User [userId=" + UUID.randomUUID() + ", username=" + userName + "]";
+    }
+
     // Convert the User object to a JSON representation
     //public JSONObject toJSON() {
         //JSONObject jsonUser = new JSONObject();
