@@ -11,6 +11,7 @@ public class ProjectApplication {
     private User user;
   
     private Scanner scanner = new Scanner(System.in);
+
     /**
      * Constructs a new ProjectApplication object.
      */
@@ -75,9 +76,13 @@ public class ProjectApplication {
      *
      * @return A list of all projects.
      */
-    public ArrayList<Project> getAllProjects() {
-      
-        return new ArrayList<>(); 
+    public void getAllProjects() {
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        for (Project project : projects) {
+            System.out.println(project.getProjectName());
+        }
     }
 
     /**
