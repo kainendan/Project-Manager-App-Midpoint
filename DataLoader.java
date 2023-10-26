@@ -33,6 +33,11 @@ public class DataLoader extends DataConstants {
 		}
     }
 
+
+    /**
+	 * grabs the projects from the json file
+     * @return the project from a json file into a arrayList
+     */
     public static ArrayList<Project> GetProjects() {
 		ArrayList<Project> project = new ArrayList<Project>();
 		
@@ -62,7 +67,11 @@ public class DataLoader extends DataConstants {
 		
 		return null;
 	}
-    
+
+    /**
+	 * grabs the users from the json file
+     * @return the users from a json file into a arraylist
+     */
     public static ArrayList<User> GetUsers() {
        ArrayList<User> users = new ArrayList<User>();
 		
