@@ -107,7 +107,10 @@ public class DataLoader extends DataConstants {
 						int taskPrio = ((Long)taskJSON.get(TASK_PRIO)).intValue();
 						int taskPrivacy = ((Long)taskJSON.get(TASK_PRIV)).intValue();
 						Category taskCate = null;//(String)taskJSON.get(TASK_CATE);
-						ArrayList<Comment> taskThread = null;
+						ArrayList<Comment> taskThread = new ArrayList<Comment>();
+						for(int j = 0; j < ((String) taskJSON.get(TASK_THREAD)).length(); j++) {
+							taskThread.add((Comment) taskJSON.get(j));
+						}
 						boolean inProgress = (Boolean)taskJSON.get(TASK_INPROGRESS);
 						String color = (String)taskJSON.get(TASK_COLOR);
 						tasks.add(new Task(id, taskName, taskDes, taskPrio, taskCate, taskThread, inProgress, taskPrivacy, color));
