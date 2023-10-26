@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
         ArrayList<User> users = GetUsers();
 		ProjectManagerUI ui = new ProjectManagerUI();
@@ -41,6 +41,7 @@ public class DataLoader extends DataConstants {
 				String projectName = (String)projectJSON.get(PROJECT_NAME);
 				String projectdes = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				String projectAuthor = (String)projectJSON.get(PROJECT_AUTHOR);
+				//ArrayList<Task> tasks = ArrayList.fromString((String)projectJSON.get(PROJECT_TASK)); 
 				
                 // add id when it can
 				project.add(new Project(id, projectName, projectdes, projectAuthor));
@@ -90,4 +91,9 @@ public class DataLoader extends DataConstants {
 		
 		return null;
     }
+	public static ArrayList<Task> GetTask() {
+		ArrayList<Task> tasks = new ArrayList<Task>
+
+
+	}
 }
