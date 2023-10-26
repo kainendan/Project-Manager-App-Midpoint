@@ -91,9 +91,9 @@ public class DataLoader extends DataConstants {
 		
 		return null;
     }
+
 	public static ArrayList<Task> GetTask() {
-		ArrayList<Task> tasks = new ArrayList<Task>
-
-
+		ArrayList<Task> tasks = new ArrayList<Task>();
+		
 	}
 }
