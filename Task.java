@@ -25,6 +25,7 @@ public abstract class Task extends Column{
  * @param color Color of the Task
  */
     public Task(String taskName, String taskDesc, int taskPrio, Category taskCategory, ArrayList<Comment> taskThread, boolean inProgress, int taskPrivacy, String color) {
+        this.id = UUID.randomUUID();
         this.taskName = taskName;
         this.taskDesc = taskDesc;
         this.taskPrio = taskPrio;
