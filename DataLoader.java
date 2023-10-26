@@ -106,7 +106,7 @@ public class DataLoader extends DataConstants {
 						String taskDes = (String)taskJSON.get(TASK_DESC);
 						int taskPrio = ((Long)taskJSON.get(TASK_PRIO)).intValue();
 						int taskPrivacy = ((Long)taskJSON.get(TASK_PRIV)).intValue();
-						Category taskCate = null;//(String)taskJSON.get(TASK_CATE);
+						Category taskCate =(Category)taskJSON.get(TASK_CATE);
 						ArrayList<Comment> taskThread = new ArrayList<Comment>();
 						for(int j = 0; j < ((String) taskJSON.get(TASK_THREAD)).length(); j++) {
 							taskThread.add((Comment) taskJSON.get(j));
