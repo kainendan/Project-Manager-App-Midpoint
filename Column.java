@@ -14,7 +14,7 @@ public class Column {
         return null;
     }
 
-    public ArrayList<Task> CompletedList() {
+    public ArrayList<Task> completedList() {
         return null;
     }
 }
