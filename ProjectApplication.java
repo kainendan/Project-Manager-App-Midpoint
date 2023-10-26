@@ -86,28 +86,44 @@ public class ProjectApplication {
     }
 
     /**
+     * Creates a new project.
+     *
+     * @return True if the project is created successfully, false otherwise.
+     */
+    public Project createProject() {
+        ProjectList projectList = ProjectList.getInstance();
+
+        String projectName = getField("Enter the project name");
+        String projectDesc = getField("Enter the project description");
+        String projectAuthor = getField("Enter the project author");
+
+        ProjectList.addProject(projectName, projectDesc, projectAuthor);
+
+        return new Project(projectName, projectDesc, projectAuthor);
+    }
+
+    /**
      * Finds and returns a list of matching projects based on some criteria.
      *
      * @return A list of matching projects.
      */
     public ArrayList<Project> findProject() {
-        
-        return new ArrayList<>(); 
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String projectName = getField("Enter the project name");
+
+        ArrayList<Project> matchingProjects = new ArrayList<Project>();
+
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                matchingProjects.add(project);
+            }
+        }
+
+        return matchingProjects;
     }
 
-    
-
-    /**
-     * Creates a new project.
-     *
-     * @param projectName The name of the project.
-     * @param projectDesc The description of the project.
-     * @return True if the project is created successfully, false otherwise.
-     */
-    public boolean createProject(String projectName, String projectDesc) {
-     
-        return false; 
-    }
 
     /**
      * Creates a new task for a project.
@@ -117,8 +133,19 @@ public class ProjectApplication {
      * @return True if the task is created successfully, false otherwise.
      */
     public boolean createTask(String taskName, String taskDesc) {
-    
-        return false; 
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String projectName = getField("Enter the project name");
+
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                project.addTask(taskName, taskDesc);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
