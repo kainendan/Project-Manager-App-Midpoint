@@ -10,28 +10,15 @@ import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
-		
-        ArrayList<User> users = GetUsers();
-		ProjectApplication projectApp = new ProjectApplication();
 
+        ArrayList<User> users = GetUsers();
+		ProjectManagerUI ui = new ProjectManagerUI();
+		
   	    for(int i= 0 ; i < users.size(); i++ ){
 			System.out.println(users.get(i));
   	    }
 
-	    System.out.println("Welcome to the project manager!");
-	    Scanner input = new Scanner(System.in);
-		System.out.println("Would you like to log in or sign up?");
-		String answer = input.nextLine();
-
-		if(answer.equals("sign up")){
-			projectApp.signUp();
-		}
-		else if(answer.equals("log in")){
-			projectApp.logIn();
-		}
-		else{
-			System.out.println("Please enter a valid response");
-		}
+		ui.run();
     }
 
 
