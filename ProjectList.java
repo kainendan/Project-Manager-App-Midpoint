@@ -5,16 +5,16 @@ public class ProjectList {
     private static ArrayList<Project> projects = new ArrayList<>();
 
     /**
-     * Constructor for the list of users
+     * Constructor for the list of projects
      */
-    private ProjectList() {
+    public ProjectList() {
         projects = new ArrayList<Project>();
         projects = DataLoader.GetProjects();
     }
 
 
     /**
-     * @return the instance of the userlist
+     * @return the instance of the project list
      */
     public static ProjectList getInstance() {
         if(projectList == null) {
@@ -25,23 +25,20 @@ public class ProjectList {
     }
 
     /**
-     * @return the user in the userList
+     * @return the project in the projectList
      */
     public ArrayList<Project> getProjectList() {
         return projects;
     }
 
     /**
-     * Add user to the userList
-     * @param userName
-     * @param password
-     * @param firstName
-     * @param lastName
-     * @param email
-     * @param privacyLevel
+     * Add project to the projectList
+     * @param projectName
+     * @param projectDesc
+     * @param projectAuthor
      */
-    public static void addProject() {
-        projects.add(new Project());
+    public static void addProject(String projectName, String projectDesc, String projectAuthor) {
+        projects.add(new Project(projectName, projectDesc, projectAuthor));
     }
 
 
