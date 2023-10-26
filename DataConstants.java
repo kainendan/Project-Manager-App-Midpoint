@@ -12,6 +12,7 @@ public abstract class DataConstants {
 	protected static final String PROJECT_DESCRIPTION = "projectDescription";
 	protected static final String PROJECT_ID = "Projectid";
 	protected static final String PROJECT_AUTHOR = "projectAuthor";
+	protected static final String TASK_FILE_NAME = "json/tasks.json";
 	protected static final String TASK_ID = "taskId";
 	protected static final String TASK_NAME = "taskName";
 	protected static final String TASK_DESC = "taskDescription";
