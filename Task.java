@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public abstract class Task extends Column{
     // Class variables
+    private UUID id;
     private String taskName;
     private String taskDesc;
     private int taskPrio;
@@ -23,6 +25,17 @@ public abstract class Task extends Column{
  * @param color Color of the Task
  */
     public Task(String taskName, String taskDesc, int taskPrio, Category taskCategory, ArrayList<Comment> taskThread, boolean inProgress, int taskPrivacy, String color) {
+        this.taskName = taskName;
+        this.taskDesc = taskDesc;
+        this.taskPrio = taskPrio;
+        this.taskCategory = taskCategory;
+        this.taskThread = taskThread;
+        this.inProgress = inProgress;
+        this.taskPrivacy = taskPrivacy;
+        this.color = color;
+    }
+     public Task(UUID id, String taskName, String taskDesc, int taskPrio, Category taskCategory, ArrayList<Comment> taskThread, boolean inProgress, int taskPrivacy, String color) {
+        this.id = id;
         this.taskName = taskName;
         this.taskDesc = taskDesc;
         this.taskPrio = taskPrio;

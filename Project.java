@@ -57,6 +57,6 @@ public class Project{
 
     @Override
     public String toString() {
-        return "User [userId=" + UUID.randomUUID() + ", username=" + projectName + "]";
+        return "Project [ProjectId=" + UUID.randomUUID() + ", ProjectName=" + projectName + "]";
     }
 }
