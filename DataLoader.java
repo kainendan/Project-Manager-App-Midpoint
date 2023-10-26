@@ -80,7 +80,7 @@ public class DataLoader extends DataConstants {
 				String email = (String)personJSON.get(USER_EMAIL);
 				
                 // add id when it can
-				users.add(new User(id, userName, password, firstName, lastName, email, 1));
+				users.add(new User(id, userName, password, firstName, lastName, email, privacy));
 			}
 			
 			return users;
@@ -93,7 +93,7 @@ public class DataLoader extends DataConstants {
     }
 
 	public static ArrayList<Task> GetTask() {
-		ArrayList<Task> tasks = new ArrayList<Task>
+		ArrayList<Task> tasks = new ArrayList<Task>();
 		try {
 					FileReader reader = new FileReader(TASK_FILE_NAME);
 					JSONParser parser = new JSONParser();	
@@ -110,7 +110,7 @@ public class DataLoader extends DataConstants {
 						ArrayList<Comment> taskThread = null;
 						boolean inProgress = (Boolean)taskJSON.get(TASK_INPROGRESS);
 						String color = (String)taskJSON.get(TASK_COLOR);
-						tasks.add(new Task(id, taskName, taskDes, taskPrio, taskCate, taskThread,taskPrivacy,  inProgress, color));
+						tasks.add(new Task(id, taskName, taskDes, taskPrio, taskCate, taskThread, inProgress, taskPrivacy, color));
 					}
 
 
