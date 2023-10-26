@@ -7,7 +7,7 @@ public class UserList {
     /**
      * Constructor for the list of users
      */
-    private UserList() {
+    public UserList() {
         users = new ArrayList<User>();
         users = DataLoader.GetUsers();
     }
