@@ -11,19 +11,26 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
         ArrayList<User> users = GetUsers();
+		ProjectApplication projectApp = new ProjectApplication();
+
   	    for(int i= 0 ; i < users.size(); i++ ){
 			System.out.println(users.get(i));
   	    }
+
 	    System.out.println("Welcome to the project manager!");
-	    Scanner scanner = new Scanner(System.in);
-	    System.out.println("Please enter your username:");
-	    String userName = scanner.nextLine();
-	    System.out.println("Please enter your password:");
-	    String password = scanner.nextLine();
-	    // search through arraylist for a matching username and password
-	    if (users.contains(userName) && users.contains(password)) {
-	    	System.out.println("Login successful!");
-	    }
+	    Scanner input = new Scanner(System.in);
+		System.out.println("Would you like to log in or sign up?");
+		String answer = input.nextLine();
+		
+		if(answer.equals("sign up")){
+			projectApp.signUp();
+		}
+		else if(answer.equals("log in")){
+			projectApp.logIn();
+		}
+		else{
+			System.out.println("Please enter a valid response");
+		}
     }
 
     public static ArrayList<Project> GetProjects() {
