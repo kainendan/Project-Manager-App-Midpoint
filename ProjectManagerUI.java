@@ -36,7 +36,7 @@ public class ProjectManagerUI {
                 case 2:
                     projectApp.createProject();
                 case 3:
-                    projectApp.createTask();
+                    //projectApp.createTask();
                 case 4:
                     running = false;
                     break;

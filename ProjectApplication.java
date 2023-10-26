@@ -128,25 +128,20 @@ public class ProjectApplication {
     /**
      * Creates a new task for a project.
      *
-     * @param taskName  The name of the task.
-     * @param taskDesc  The description of the task.
      * @return True if the task is created successfully, false otherwise.
      */
-    public boolean createTask(String taskName, String taskDesc) {
-        ProjectList projectList = ProjectList.getInstance();
-        ArrayList<Project> projects = projectList.getProjectList();
+    //public Task createTask(){
+        //ProjectList projectList = ProjectList.getInstance();
+        //ArrayList<Project> projects = projectList.getProjectList();
 
-        String projectName = getField("Enter the project name");
+        //String taskName = getField("Enter the task name");
+        //String taskDesc = getField("Enter the task description");
+        //String taskAuthor = getField("Enter the task author");
 
-        for (Project project : projects) {
-            if (project.getProjectName().equals(projectName)) {
-                project.addTask(taskName, taskDesc);
-                return true;
-            }
-        }
+        //column.addTask(taskName, taskDesc, taskAuthor);
 
-        return false;
-    }
+        //return new Task(taskName, taskDesc, taskAuthor);
+    //}
 
     /**
      * Creates a new comment for a task.

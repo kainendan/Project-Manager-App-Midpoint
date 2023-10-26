@@ -17,4 +17,8 @@ public class Column {
     public ArrayList<Task> completedList() {
         return null;
     }
+
+    public void addTask(Task task) {
+        
+    }  
 }
