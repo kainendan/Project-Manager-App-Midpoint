@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
     public static void main(String[] args) {
+		
         ArrayList<User> users = GetUsers();
 		ProjectApplication projectApp = new ProjectApplication();
 
@@ -21,7 +22,7 @@ public class DataLoader extends DataConstants {
 	    Scanner input = new Scanner(System.in);
 		System.out.println("Would you like to log in or sign up?");
 		String answer = input.nextLine();
-		
+
 		if(answer.equals("sign up")){
 			projectApp.signUp();
 		}
