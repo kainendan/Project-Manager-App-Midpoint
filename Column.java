@@ -1,25 +1,43 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Column {
     
     public ArrayList<Task> backlogList() {
-        
-        return null;
+        ArrayList<Task> backlogList = new ArrayList<Task>();
+        return backlogList;
     }
 
     public ArrayList<Task> todoList() {
-        return null;
+        ArrayList<Task> todoList = new ArrayList<Task>();
+        return todoList;
     }
 
     public ArrayList<Task> inProgressList() {
-        return null;
+        ArrayList<Task> inProgressList = new ArrayList<Task>();
+        return inProgressList;
     }
 
     public ArrayList<Task> completedList() {
-        return null;
+        ArrayList<Task> completedList = new ArrayList<Task>();
+        return completedList;
     }
 
-    public void addTask(Task task) {
-        
+    public void addTask(Task task, String list) {
+        if(list.equalsIgnoreCase("backlogList"))
+        {
+            backlogList().add(task);
+        } else if(list.equalsIgnoreCase("todoList"))
+        {
+            todoList().add(task);
+        } else if(list.equalsIgnoreCase("inProgressList"))
+        {
+            inProgressList().add(task);
+        } else if(list.equalsIgnoreCase("completedList"))
+        {
+            completedList().add(task);
+        } else {
+            System.out.println("Invalid list name");
+        }
     }  
 }
