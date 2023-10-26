@@ -17,6 +17,7 @@ public abstract class DataConstants {
 	protected static final String TASK_NAME = "taskName";
 	protected static final String TASK_DESC = "taskDescription";
 	protected static final String TASK_PRIO = "taskPriority";
+	protected static final String TASK_PRIV = "taskPrivacy";
 	protected static final String TASK_CATE = "taskCategory";
 	protected static final String TASK_THREAD = "taskThread";
 	protected static final String TASK_INPROGRESS= "TaskInProgress";
