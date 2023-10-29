@@ -12,12 +12,15 @@ public class DataLoader extends DataConstants {
 	public static void main(String[] args) {
 
         ArrayList<User> users = GetUsers();
+		ArrayList<Task> task =  GetTask();
 		ProjectManagerUI ui = new ProjectManagerUI();
 		
   	    for(int i= 0 ; i < users.size(); i++ ){
 			System.out.println(users.get(i));
   	    }
-
+		for(int j = 0; j < task.size(); j++) {
+			System.out.println(task.get(j));
+		}
 		ui.run();
     }
 
@@ -37,7 +40,7 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < projJSON.size(); i++) {
 				JSONObject projectJSON = (JSONObject)projJSON.get(i);
-				UUID id = UUID.fromString((String)projectJSON.get(USER_ID));
+				UUID id = UUID.fromString((String)projectJSON.get(PROJECT_ID));
 				String projectName = (String)projectJSON.get(PROJECT_NAME);
 				String projectdes = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				String projectAuthor = (String)projectJSON.get(PROJECT_AUTHOR);
@@ -76,11 +79,12 @@ public class DataLoader extends DataConstants {
 				String firstName = (String)personJSON.get(USER_FIRST_NAME);
 				String lastName = (String)personJSON.get(USER_LAST_NAME);
                 String password = (String)personJSON.get(USER_PASSWORD);
-				int privacy = ((Long)personJSON.get(USER_PRIVACY)).intValue();
+				String privacy = (String)personJSON.get(USER_PRIVACY);
+				int privacyValue = Integer.parseInt(privacy); 
 				String email = (String)personJSON.get(USER_EMAIL);
 				
                 // add id when it can
-				users.add(new User(id, userName, password, firstName, lastName, email, privacy));
+				users.add(new User(id, userName, password, firstName, lastName, email, privacyValue));
 			}
 			
 			return users;
@@ -104,16 +108,34 @@ public class DataLoader extends DataConstants {
 						UUID id = UUID.fromString((String)taskJSON.get(TASK_ID));
 						String taskName = (String)taskJSON.get(TASK_NAME);
 						String taskDes = (String)taskJSON.get(TASK_DESC);
-						int taskPrio = ((Long)taskJSON.get(TASK_PRIO)).intValue();
-						int taskPrivacy = ((Long)taskJSON.get(TASK_PRIV)).intValue();
-						Category taskCate =(Category)taskJSON.get(TASK_CATE);
+						String taskPrio = (String)taskJSON.get(TASK_PRIO);
+						int taskPrioValue = Integer.parseInt(taskPrio);
+						String taskPrivacy = (String)taskJSON.get(TASK_PRIV);
+						int taskPrivacyValue = Integer.parseInt(taskPrivacy);
+						String taskCateString = (String)taskJSON.get(TASK_CATE);
+						
 						ArrayList<Comment> taskThread = new ArrayList<Comment>();
 						for(int j = 0; j < ((String) taskJSON.get(TASK_THREAD)).length(); j++) {
 							taskThread.add((Comment) taskJSON.get(j));
 						}
+						
 						boolean inProgress = (Boolean)taskJSON.get(TASK_INPROGRESS);
 						String color = (String)taskJSON.get(TASK_COLOR);
-						tasks.add(new Task(id, taskName, taskDes, taskPrio, taskCate, taskThread, inProgress, taskPrivacy, color));
+						if(taskCateString.equals(Category.BUG)) {
+							tasks.add(new Task(id, taskName, taskDes, taskPrioValue, Category.BUG, taskThread, inProgress, taskPrivacyValue, color));
+						} else if(taskCateString.equals(Category.FEATURE)) {
+							tasks.add(new Task(id, taskName, taskDes, taskPrioValue, Category.FEATURE, taskThread, inProgress, taskPrivacyValue, color));
+						} else if(taskCateString.equals(Category.URGENT_BUG)) {
+							tasks.add(new Task(id, taskName, taskDes, taskPrioValue, Category.FEATURE, taskThread, inProgress, taskPrivacyValue, color));
+						} else if(taskCateString.equals(Category.URGENT_BUG)) {
+							tasks.add(new Task(id, taskName, taskDes, taskPrioValue, Category.URGENT_BUG, taskThread, inProgress, taskPrivacyValue, color));
+						} else if(taskCateString.equals(Category.URGENT_FEATURE)) {
+							tasks.add(new Task(id, taskName, taskDes, taskPrioValue, Category.URGENT_FEATURE, taskThread, inProgress, taskPrivacyValue, color));
+						} else if(taskCateString.equals(Category.OPTIONAL_FEATURE)) {
+							tasks.add(new Task(id, taskName, taskDes, taskPrioValue, Category.OPTIONAL_FEATURE, taskThread, inProgress, taskPrivacyValue, color));
+						} else {
+							System.out.println("Unable to load task category");
+						}
 					}
 
 
