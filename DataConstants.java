@@ -15,8 +15,8 @@ public abstract class DataConstants {
 	protected static final String TASK_FILE_NAME = "json/tasks.json";
 	protected static final String TASK_ID = "taskId";
 	protected static final String TASK_NAME = "taskName";
-	protected static final String TASK_DESC = "taskDescription";
-	protected static final String TASK_PRIO = "taskPriority";
+	protected static final String TASK_DESC = "taskDesc";
+	protected static final String TASK_PRIO = "taskPrio";
 	protected static final String TASK_PRIV = "taskPrivacy";
 	protected static final String TASK_CATE = "taskCategory";
 	protected static final String TASK_THREAD = "taskThread";

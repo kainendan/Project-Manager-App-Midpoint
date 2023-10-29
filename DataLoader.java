@@ -109,34 +109,23 @@ public class DataLoader extends DataConstants {
 						String taskName = (String)taskJSON.get(TASK_NAME);
 						String taskDes = (String)taskJSON.get(TASK_DESC);
 						String taskPrio = (String)taskJSON.get(TASK_PRIO);
-						//int taskPrioValue = Integer.parseInt(taskPrio);
+						int taskPrioValue = Integer.parseInt(taskPrio);
 						//System.out.println(taskPrioValue);
 						String taskPrivacy = (String)taskJSON.get(TASK_PRIV);
 						int taskPrivacyValue = Integer.parseInt(taskPrivacy);
 						String taskCateString = (String)taskJSON.get(TASK_CATE);
+						Category taskCategory = Category.valueOf(taskCateString);
 						
 						ArrayList<Comment> taskThread = new ArrayList<Comment>();
 						for(int j = 0; j < ((String) taskJSON.get(TASK_THREAD)).length(); j++) {
 							taskThread.add((Comment) taskJSON.get(j));
 						}
 						
-						boolean inProgress = (Boolean)taskJSON.get(TASK_INPROGRESS);
+						String inProgress = (String)taskJSON.get(TASK_INPROGRESS);
+						boolean inProgressBoo = Boolean.parseBoolean(inProgress);
 						String color = (String)taskJSON.get(TASK_COLOR);
-						if(taskCateString.equals(Category.BUG)) {
-							tasks.add(new Task(id, taskName, taskDes, 1, Category.BUG, taskThread, inProgress, taskPrivacyValue, color));
-						} else if(taskCateString.equals(Category.FEATURE)) {
-							tasks.add(new Task(id, taskName, taskDes, 1, Category.FEATURE, taskThread, inProgress, taskPrivacyValue, color));
-						} else if(taskCateString.equals(Category.URGENT_BUG)) {
-							tasks.add(new Task(id, taskName, taskDes, 1, Category.FEATURE, taskThread, inProgress, taskPrivacyValue, color));
-						} else if(taskCateString.equals(Category.URGENT_BUG)) {
-							tasks.add(new Task(id, taskName, taskDes, 1, Category.URGENT_BUG, taskThread, inProgress, taskPrivacyValue, color));
-						} else if(taskCateString.equals(Category.URGENT_FEATURE)) {
-							tasks.add(new Task(id, taskName, taskDes, 1, Category.URGENT_FEATURE, taskThread, inProgress, taskPrivacyValue, color));
-						} else if(taskCateString.equals(Category.OPTIONAL_FEATURE)) {
-							tasks.add(new Task(id, taskName, taskDes, 1, Category.OPTIONAL_FEATURE, taskThread, inProgress, taskPrivacyValue, color));
-						} else {
-							System.out.println("Unable to load task category");
-						}
+						
+						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, taskThread, inProgressBoo, taskPrivacyValue, color));
 					}
 
 
