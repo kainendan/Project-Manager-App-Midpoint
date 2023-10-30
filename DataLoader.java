@@ -96,6 +96,10 @@ public class DataLoader extends DataConstants {
 		return null;
     }
 
+	/**
+	 * grabs the Task from the json file
+     * @return the Tasks from a json file into a arraylist
+     */
 	public static ArrayList<Task> GetTask() {
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		try {
