@@ -25,26 +25,7 @@ public class Column {
         ArrayList<Task> completedList = new ArrayList<Task>();
         return completedList;
     }
-
-    /*
-    public void addTask(Task task, String list) {
-        if(list.equalsIgnoreCase("backlogList"))
-        {
-            backlogList().add(task);
-        } else if(list.equalsIgnoreCase("todoList"))
-        {
-            todoList().add(task);
-        } else if(list.equalsIgnoreCase("inProgressList"))
-        {
-            inProgressList().add(task);
-        } else if(list.equalsIgnoreCase("completedList"))
-        {
-            completedList().add(task);
-        } else {
-            System.out.println("Invalid list name");
-        }
-    }  
-    */
+    
     private String columnName;
     private ArrayList<Task> tasks;
 
@@ -78,7 +59,7 @@ public class Column {
      * @param taskAuthor
      */
     public void addTask(String taskName, String taskDesc, String taskAuthor) {
-        tasks.add(new Task(taskName, taskDesc, taskAuthor));
+        tasks.add(new Task(taskName, taskDesc, 0, null, null, false, 0, taskAuthor));
     }
 
     /**

@@ -17,8 +17,10 @@ public class ProjectManagerUI {
             switch(choice){
                 case 1:
                     projectApp.logIn();
+                    break;
                 case 2:
                     projectApp.signUp();
+                    break;
                 case 3:
                     running = false;
                     break;
