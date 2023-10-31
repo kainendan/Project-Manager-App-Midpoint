@@ -27,7 +27,7 @@
     "taskDesc": "Task 3 Description",
     "taskPrio": "1",
     "taskCategory": "BUG",
-    "taskThread": "task3Thread",
+    "taskThread": ["task3Thread", "task3Thread2"],
     "inProgress": true,
     "taskPrivacy": "1",
     "color": "#008000"
