@@ -18,7 +18,6 @@ public class ProjectList {
      */
     public static ProjectList getInstance() {
         if(projectList == null) {
-            System.out.println("Creating a new user account: ");
             projectList = new ProjectList();
         }
         return projectList;

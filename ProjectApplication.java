@@ -39,6 +39,7 @@ public class ProjectApplication {
            int privacyLevel = Integer.parseInt(getField("Enter your privacy level"));
 
            UserList.addUser(userName, password, firstName, lastName, email, privacyLevel);
+           DataWriter.saveUsers();
    }
 
     /**
@@ -46,7 +47,7 @@ public class ProjectApplication {
      *
      * @param username The username of the user.
      * @param password The password of the user.
-     * @return The User object if login is successful, or null if login fails.
+     * @return The User object if login is successful, repeat the login process otherwise, exit if the user chooses to.
      */
     public void logIn() {
         UserList userList = UserList.getInstance();
@@ -54,10 +55,12 @@ public class ProjectApplication {
         String userName = getField("Enter your username");
         String password = getField("Enter your password");
 
-        if (userList.isValidLogin(userName, password)) {
+        if (UserList.isValidLogin(userName, password)) {
             System.out.println("Login successful!");
+            user = UserList.getUser(userName);
         } else {
-            System.out.println("Invalid username or password");
+            System.out.println("Invalid login. Please try again.");
+            logIn();
         }
     }
 
@@ -150,7 +153,7 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
-    public boolean createComment(User commentAuth, String commentText) {
+    public boolean createComment(String commentText) {
       
         return false;
     }

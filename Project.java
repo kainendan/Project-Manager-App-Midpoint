@@ -55,6 +55,14 @@ public class Project{
         return user.getUserName();
     }
 
+    public void addColumn(Column column) {
+        columns.add(column);
+    }
+
+    public void addComment(Comment comment) {
+        projectThread.add(comment);
+    }
+
     @Override
     public String toString() {
         return "Project [ProjectId=" + UUID.randomUUID() + ", ProjectName=" + projectName + "]";

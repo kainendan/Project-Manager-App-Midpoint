@@ -18,7 +18,6 @@ public class UserList {
      */
     public static UserList getInstance() {
         if(userList == null) {
-            System.out.println("Creating a new user account: ");
             userList = new UserList();
         }
         return userList;
@@ -57,6 +56,20 @@ public class UserList {
             }
         }
         return false;
+    }
+
+    /**
+     * Get user from the userList
+     * @param userName
+     * @return the user
+     */
+    public static User getUser(String userName) {
+        for(User user : users) {
+            if(user.getUserName().equals(userName)) {
+                return user;
+            }
+        }
+        return null;
     }
 
     /**

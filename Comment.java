@@ -8,4 +8,6 @@ public class Comment {
         this.commentText = commentText;
         this.commentDate = commentDate;
     }
+
+    
 }
