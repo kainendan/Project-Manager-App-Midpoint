@@ -16,7 +16,8 @@
     "taskDesc": "Make it possible",
     "taskPrio": "1",
     "taskCategory": "BUG",
-    "taskThread": "task2Thread",
+    "taskThread":  [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
+    "inProgress": true,
     "inProgress": true,
     "taskPrivacy": "1",
     "color": "#0000FF"
@@ -27,7 +28,7 @@
     "taskDesc": "Task 3 Description",
     "taskPrio": "1",
     "taskCategory": "BUG",
-    "taskThread": ["task3Thread", "task3Thread2"],
+    "taskThread": [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
     "inProgress": true,
     "taskPrivacy": "1",
     "color": "#008000"

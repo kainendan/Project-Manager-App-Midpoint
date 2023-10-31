@@ -23,5 +23,8 @@ public abstract class DataConstants {
 	protected static final String TASK_INPROGRESS= "TaskInProgress";
 	protected static final String TASK_PRIVACY = "taskPrivacy";
 	protected static final String TASK_COLOR = "taskColor";
+	protected static final String COMMENT_AUTH = "ComAuth";
+	protected static final String COMMENT = "Comment";
+	protected static final String COMMENT_DATE = "ComDate";
 
 }
