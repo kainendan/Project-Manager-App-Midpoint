@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 
         ArrayList<User> users = GetUsers();
 		ArrayList<Task> task =  GetTask();
@@ -22,7 +22,7 @@ public class DataLoader extends DataConstants {
 			System.out.println(task.get(j));
 		}
 		ui.run();
-    }
+    }*/
 
 
     /**
