@@ -176,9 +176,15 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
-    public boolean createComment(String commentText) {
-      
-        return false;
+    public void createComment() {
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String commentAuth = getField("Enter the comment author");
+        String commentText = getField("Enter the comment text");
+        String commentDate = getField("Enter the comment date");
+
+        Comment comment = new Comment(commentAuth, commentText, commentDate);
     }
 
     /**
