@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 	
+	
 	public static void saveUsers() {
 		UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUserList();
@@ -69,17 +70,22 @@ public class DataWriter extends DataConstants {
 		projectDetails.put(PROJECT_NAME, project.getProjectName());
 		projectDetails.put(PROJECT_DESCRIPTION, project.getProjectDesc());
 		projectDetails.put(PROJECT_AUTHOR, project.getProjectAuthor());
-		//projectDetails.put(PROJECT_TASK, project.getTasks());
 		
 		return projectDetails;
 	}
 
 	public static JSONObject getTaskJSON(Task task) {
 		JSONObject taskDetails = new JSONObject();
-		taskDetails.put("taskId", task.getId().toString());
-		taskDetails.put("taskName", task.getTaskName());
-		// Add other task properties here
-	
+		taskDetails.put(DataConstants.TASK_NAME, task.getTaskName());
+		taskDetails.put(DataConstants.TASK_DESC, task.getTaskDesc());
+    	taskDetails.put(DataConstants.TASK_PRIO, task.getTaskPrio());
+    	taskDetails.put(DataConstants.TASK_CATE, task.getTaskCategory().toString());
+		taskDetails.put(DataConstants.TASK_PRIV, task.getTaskPrivacy());
+    	taskDetails.put(DataConstants.TASK_THREAD, task.getTaskThread());
+    	taskDetails.put(DataConstants.TASK_INPROGRESS, task.isInProgress());
+    	taskDetails.put(DataConstants.TASK_COLOR, task.getColor());
+
+
 		return taskDetails;
 	}
 
@@ -89,11 +95,7 @@ public class DataWriter extends DataConstants {
 		saveTasks(tasks); // Save the updated list of tasks to the JSON file
 	}
 
-	public static void removeTask(UUID taskId) {
-    ArrayList<Task> tasks = DataLoader.GetTask(); // Load existing tasks
-    tasks.removeIf(task -> task.getId().equals(taskId)); // Remove the task with the specified taskId
-    saveTasks(tasks); // Save the updated list of tasks to the JSON file
-}
+	
 
 	public static void saveTasks(ArrayList<Task> tasks) {
 		JSONArray jsonTasks = new JSONArray();

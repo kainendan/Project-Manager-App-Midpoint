@@ -73,4 +73,32 @@ public class Task extends Column{
 public String getTaskName() {
     return taskName;
 }
+public String getTaskDesc() {
+    return taskDesc;
+}
+
+public int getTaskPrio() {
+    return taskPrio;
+}
+
+public Category getTaskCategory() {
+    return taskCategory;
+}
+
+public ArrayList<Comment> getTaskThread() {
+    return taskThread;
+}
+
+public boolean isInProgress() {
+    return inProgress;
+}
+
+public int getTaskPrivacy() {
+    return taskPrivacy;
+}
+
+public String getColor() {
+    return color;
+}
+
 }

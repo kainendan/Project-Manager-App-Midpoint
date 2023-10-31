@@ -63,7 +63,21 @@ public class ProjectManagerUI {
                         projectApp.openProject();
                         break;
                     case 4:
-                        //projectApp.createTask();
+                    // Collect task details from the user
+                     System.out.print("Enter task name: ");
+                    String taskName = input.nextLine();
+                    System.out.print("Enter task description: ");
+                     String taskDesc = input.nextLine();
+                     // Collect other task details like priority, category, etc.
+                     Category taskCategory = Category.BUG; // Assuming Category is an enum
+                     ArrayList<Comment> taskThread = new ArrayList<Comment>();
+                     
+                     // Create a new Task object with the collected details
+                     Task newTask = new Task(taskName, taskDesc, 3 ,taskCategory, taskThread, true, 1, "#FF0000");
+
+                     // Add the new task to the JSON file
+                     DataWriter.addTask(newTask);
+                    
                         break;
                     case 5:
                         running = false;
