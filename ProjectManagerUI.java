@@ -5,6 +5,7 @@ public class ProjectManagerUI {
         Scanner input = new Scanner(System.in);
         boolean running = true;
         ProjectApplication projectApp = new ProjectApplication();
+        UserList user = new UserList();
 
         while(running){
             System.out.println("Welcome to Project Manager!");
@@ -21,6 +22,7 @@ public class ProjectManagerUI {
                     projectApp.signUp();
                 case 3:
                     running = false;
+                    user.logout();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -39,6 +41,7 @@ public class ProjectManagerUI {
                     //projectApp.createTask();
                 case 4:
                     running = false;
+                    user.logout();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");

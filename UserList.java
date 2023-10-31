@@ -42,6 +42,7 @@ public class UserList {
      */
     public static void addUser(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
         users.add(new User(userName, password, firstName, lastName, email, privacyLevel));
+        
     }
 
     /**
