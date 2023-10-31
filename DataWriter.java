@@ -2,6 +2,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -70,6 +72,41 @@ public class DataWriter extends DataConstants {
 		//projectDetails.put(PROJECT_TASK, project.getTasks());
 		
 		return projectDetails;
+	}
+
+	public static JSONObject getTaskJSON(Task task) {
+		JSONObject taskDetails = new JSONObject();
+		taskDetails.put("taskId", task.getId().toString());
+		taskDetails.put("taskName", task.getTaskName());
+		// Add other task properties here
+	
+		return taskDetails;
+	}
+
+	public static void addTask(Task task) {
+		ArrayList<Task> tasks = DataLoader.GetTask(); // Load existing tasks
+		tasks.add(task); // Add the new task
+		saveTasks(tasks); // Save the updated list of tasks to the JSON file
+	}
+
+	public static void removeTask(UUID taskId) {
+    ArrayList<Task> tasks = DataLoader.GetTask(); // Load existing tasks
+    tasks.removeIf(task -> task.getId().equals(taskId)); // Remove the task with the specified taskId
+    saveTasks(tasks); // Save the updated list of tasks to the JSON file
+}
+
+	public static void saveTasks(ArrayList<Task> tasks) {
+		JSONArray jsonTasks = new JSONArray();
+		for (Task task : tasks) {
+			jsonTasks.add(getTaskJSON(task));
+		}
+		
+		try (FileWriter file = new FileWriter(TASK_FILE_NAME)) {
+			file.write(jsonTasks.toJSONString());
+			file.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
 
