@@ -28,26 +28,35 @@ public class ProjectManagerUI {
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
-                    break;
             }
 
-            System.out.println("Would you like to:\n 1. View Projects\n 2. Create Project\n 3. Create a Task\n 4. Exit");
-            int choice2 = input.nextInt();
-            input.nextLine();
-            switch(choice2){
-                case 1:
-                    projectApp.getAllProjects();
-                case 2:
-                    projectApp.createProject();
-                case 3:
-                    //projectApp.createTask();
-                case 4:
-                    running = false;
-                    user.logout();
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-                    break;
+            boolean isLoggedIn = true;
+
+            while(isLoggedIn){
+                System.out.println("Would you like to:\n 1. View Projects\n 2. Create Project\n 3. Open Project\n 4. Create a Task\n 5. Exit");
+                int choice2 = input.nextInt();
+                input.nextLine();
+                switch(choice2){
+                    case 1:
+                        projectApp.getAllProjects();
+                        break;
+                    case 2:
+                        projectApp.createProject();
+                        break;
+                    case 3:
+                        projectApp.openProject();
+                        break;
+                    case 4:
+                        //projectApp.createTask();
+                        break;
+                    case 5:
+                        running = false;
+                        user.logout();
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                        break;
+                }
             }
 
         }
