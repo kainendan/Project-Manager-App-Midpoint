@@ -101,7 +101,7 @@ public class DataLoader extends DataConstants {
      * @return the Tasks from a json file into a arraylist
      */
 	public static ArrayList<Task> GetTask() {
-		User user;
+		 ArrayList<User> users = new ArrayList<User>();
 
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		try {
@@ -121,12 +121,17 @@ public class DataLoader extends DataConstants {
 						int taskPrivacyValue = Integer.parseInt(taskPrivacy);
 						String taskCateString = (String)taskJSON.get(TASK_CATE);
 						Category taskCategory = Category.valueOf(taskCateString);
+						
 						JSONArray commentJson = (JSONArray)taskJSON.get(TASK_THREAD);
 						ArrayList<String> taskThread = new ArrayList<String>();
 						ArrayList<Comment> comment= new ArrayList<Comment>();
 						for(int j = 0; j <  commentJson.size(); j++) {
+							JSONObject comJSON = (JSONObject)commentJson.get(j);
 							taskThread.add((String)commentJson.get(j));
-							//comment.add(new Comment(getUserName(), "", ""));
+							String CommentAuth = (String)comJSON.get(COMMENT_AUTH);
+							String Comment = (String)comJSON.get(COMMENT);
+							String ComDate = (String)comJSON.get(COMMENT_DATE);
+							comment.add(new Comment(CommentAuth, Comment, ComDate));
 						}
 						
 						String inProgress = (String)taskJSON.get(TASK_INPROGRESS);
