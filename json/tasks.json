@@ -5,7 +5,7 @@
     "taskDesc": "Curve the metal",
     "taskPrio": "1",
     "taskCategory": "BUG",
-    "taskThread": "task1Thread",
+    "taskThread": [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
     "inProgress": false,
     "taskPrivacy": "1",
     "color": "#ff0000"
