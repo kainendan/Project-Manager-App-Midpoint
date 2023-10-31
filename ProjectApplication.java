@@ -145,6 +145,7 @@ public class ProjectApplication {
                 System.out.println(project.getProjectDesc());
                 System.out.println(project.getProjectAuthor());
                 System.out.println(project.getId());
+                project.printBoard();
             }
         }
     }

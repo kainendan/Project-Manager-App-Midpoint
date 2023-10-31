@@ -61,34 +61,6 @@ public class ProjectManagerUI {
                         break;
                     case 3:
                         projectApp.openProject();
-                        {
-                            boolean isOpen = true;
-                            while(isOpen){
-                                System.out.println("Would you like to:\n 1. View Tasks\n 2. Create Column\n 3. Create Task\n 4. Write Comment\n 5. Exit");
-                                int choice3 = input.nextInt();
-                                input.nextLine();
-                                switch(choice3){
-                                    case 1:
-                                        //projectApp.getAllTasks();
-                                        break;
-                                    case 2:
-                                        //projectApp.createColumn();
-                                        break;
-                                    case 3:
-                                        //projectApp.createTask();
-                                        break;
-                                    case 4:
-                                        //projectApp.writeComment();
-                                        break;
-                                    case 5:
-                                        isOpen = false;
-                                        break;
-                                    default:
-                                        System.out.println("Invalid choice. Please try again.");
-                                        break;
-                                }
-                            }
-                        }
                         break;
                     case 4:
                         //projectApp.createTask();
