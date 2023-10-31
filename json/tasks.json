@@ -1,19 +1,19 @@
 [
   {
     "taskId": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
-    "taskName": "Task 1",
-    "taskDesc": "Task 1 Description",
+    "taskName": "Curve the metal to make a cylindrical shape",
+    "taskDesc": "Curve the metal",
     "taskPrio": "1",
     "taskCategory": "BUG",
     "taskThread": "task1Thread",
-    "inProgress": true,
+    "inProgress": false,
     "taskPrivacy": "1",
     "color": "#ff0000"
   },
   {
     "taskId": "2ce85407-e210-4a50-b858-6ef235f4bfb4",
-    "taskName": "Task 2",
-    "taskDesc": "Task 2 Description",
+    "taskName": "Make impossible burger possible",
+    "taskDesc": "Make it possible",
     "taskPrio": "1",
     "taskCategory": "BUG",
     "taskThread": "task2Thread",
