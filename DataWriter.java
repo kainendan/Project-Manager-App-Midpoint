@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 	
+	
 	public static void saveUsers() {
 		UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUserList();
@@ -67,9 +68,44 @@ public class DataWriter extends DataConstants {
 		projectDetails.put(PROJECT_NAME, project.getProjectName());
 		projectDetails.put(PROJECT_DESCRIPTION, project.getProjectDesc());
 		projectDetails.put(PROJECT_AUTHOR, project.getProjectAuthor());
-		//projectDetails.put(PROJECT_TASK, project.getTasks());
 		
 		return projectDetails;
+	}
+
+	public static void saveTasks() {
+		//TaskList tasks = TaskList.getInstance();
+		//ArrayList<Task> taskList = tasks.getTaskList();
+		JSONArray jsonTasks = new JSONArray();
+		
+		//creating all the json objects
+		//for(int i=0; i< taskList.size(); i++) {
+			jsonTasks.add(getTaskJSON(taskList.get(i)));
+		//}
+		
+		//Write JSON file
+		try (FileWriter file = new FileWriter(TASK_FILE_NAME)) {
+ 
+			file.write(jsonTasks.toJSONString());
+			file.flush();
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static JSONObject getTaskJSON(Task task) {
+		JSONObject taskDetails = new JSONObject();
+		taskDetails.put(TASK_ID, task.getId().toString());
+		taskDetails.put(TASK_NAME, task.getTaskName());
+		taskDetails.put(TASK_DESC, task.getTaskDesc());
+		taskDetails.put(TASK_PRIO, task.getTaskPrio());
+		taskDetails.put(TASK_CATE, task.getTaskCategory());
+		taskDetails.put(TASK_THREAD, task.getTaskThread());
+		taskDetails.put(TASK_INPROGRESS, task.getInProgress());
+		taskDetails.put(TASK_PRIVACY, task.getTaskPrivacy());
+		taskDetails.put(TASK_COLOR, task.getColor());
+
+		return taskDetails;
 	}
 }
 
