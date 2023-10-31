@@ -1,4 +1,5 @@
 // Nick Arboscello
+<<<<<<< HEAD
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
@@ -6,6 +7,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class User {
+=======
+//import org.json.simple.JSONObject;
+//import org.json.simple.JSONValue;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.UUID;
+
+public class User {
+    private UUID id;
+>>>>>>> refs/remotes/origin/main
     private String userName;
     private String password;
     private String firstName;
@@ -14,6 +26,10 @@ public class User {
     private int privacyLevel;
 
     public User(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
+<<<<<<< HEAD
+=======
+        this.id = UUID.randomUUID();
+>>>>>>> refs/remotes/origin/main
         this.userName = userName;
         this.password = password;
         this.firstName = firstName;
@@ -21,6 +37,19 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
+<<<<<<< HEAD
+=======
+    public User(UUID id, String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.privacyLevel = privacyLevel;
+    }
+
+>>>>>>> refs/remotes/origin/main
 
     // Getters for the user's properties
 
@@ -49,6 +78,7 @@ public class User {
     }
 
     // Convert the User object to a JSON representation
+<<<<<<< HEAD
     public JSONObject toJSON() {
         JSONObject jsonUser = new JSONObject();
         jsonUser.put("userName", userName);
@@ -74,4 +104,18 @@ public class User {
             e.printStackTrace();
         }
     }
+=======
+    //public JSONObject toJSON() {
+        //JSONObject jsonUser = new JSONObject();
+        //jsonUser.put("userName", userName);
+        //jsonUser.put("password", password);
+        //jsonUser.put("firstName", firstName);
+        //jsonUser.put("lastName", lastName);
+        //jsonUser.put("email", email);
+        //jsonUser.put("privacyLevel", privacyLevel);
+        //return jsonUser;
+    //}
+
+>>>>>>> refs/remotes/origin/main
 }
+

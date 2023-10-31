@@ -1,0 +1,26 @@
+[
+  {
+    "userName": "bobsmith",
+    "password": "password123",
+    "firstName": "bob",
+    "lastName": "smith",
+    "email": "bobsmith@gmail.com",
+    "privacylevel": "1"
+  },
+  {
+    "userName": "johndoe",
+    "password": "password123",
+    "firstName": "john",
+    "lastName": "doe",
+    "email": "johndoe@gmail.com",
+    "privacylevel": "2"
+  },
+  {
+    "userName": "janedoe",
+    "password": "password123",
+    "firstName": "jane",
+    "lastName": "doe",
+    "email": "janedoe@gmail.com",
+    "privacylevel": "3"
+  }
+]

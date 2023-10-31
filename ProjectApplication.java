@@ -26,9 +26,14 @@ public class ProjectApplication {
      * @return The User object if login is successful, or null if login fails.
      */
     public User login(String username, String password) {
+<<<<<<< HEAD
         // Implementation details for login.
         // Replace with actual logic.
         return null; // Placeholder return value.
+=======
+       
+        return null; 
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -37,9 +42,14 @@ public class ProjectApplication {
      * @return The newly created User object.
      */
     public User signUp() {
+<<<<<<< HEAD
         // Implementation details for user signup.
         // Replace with actual logic.
         return new User(); // Placeholder return value.
+=======
+        //return new User();
+        return null; 
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -48,9 +58,14 @@ public class ProjectApplication {
      * @return A list of all projects.
      */
     public ArrayList<Project> getAllProjects() {
+<<<<<<< HEAD
         // Implementation details for getting all projects.
         // Replace with actual logic.
         return new ArrayList<>(); // Placeholder return value.
+=======
+      
+        return new ArrayList<>(); 
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -59,9 +74,14 @@ public class ProjectApplication {
      * @return A list of matching projects.
      */
     public ArrayList<Project> findProject() {
+<<<<<<< HEAD
         // Implementation details for finding projects.
         // Replace with actual logic.
         return new ArrayList<>(); // Placeholder return value.
+=======
+        
+        return new ArrayList<>(); 
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -72,9 +92,14 @@ public class ProjectApplication {
      * @return The newly created User object.
      */
     public User createAccount(String firstName, String lastName) {
+<<<<<<< HEAD
         // Implementation details for creating a user account.
         // Replace with actual logic.
         return new User(); // Placeholder return value.
+=======
+        //return new User();
+        return null;
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -85,9 +110,14 @@ public class ProjectApplication {
      * @return True if the project is created successfully, false otherwise.
      */
     public boolean createProject(String projectName, String projectDesc) {
+<<<<<<< HEAD
         // Implementation details for creating a project.
         // Replace with actual logic.
         return false; // Placeholder return value.
+=======
+     
+        return false; 
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -98,9 +128,14 @@ public class ProjectApplication {
      * @return True if the task is created successfully, false otherwise.
      */
     public boolean createTask(String taskName, String taskDesc) {
+<<<<<<< HEAD
         // Implementation details for creating a task.
         // Replace with actual logic.
         return false; // Placeholder return value.
+=======
+    
+        return false; 
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -111,9 +146,14 @@ public class ProjectApplication {
      * @return True if the comment is created successfully, false otherwise.
      */
     public boolean createComment(User commentAuth, String commentText) {
+<<<<<<< HEAD
         // Implementation details for creating a comment.
         // Replace with actual logic.
         return false; // Placeholder return value.
+=======
+      
+        return false;
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -123,8 +163,12 @@ public class ProjectApplication {
      * @param task   The updated task information.
      */
     public void editTask(int taskId, ArrayList<String> task) {
+<<<<<<< HEAD
         // Implementation details for editing a task.
         // Replace with actual logic.
+=======
+       
+>>>>>>> refs/remotes/origin/main
     }
 }
 
