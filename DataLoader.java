@@ -123,11 +123,11 @@ public class DataLoader extends DataConstants {
 						Category taskCategory = Category.valueOf(taskCateString);
 						
 						JSONArray commentJson = (JSONArray)taskJSON.get(TASK_THREAD);
-						ArrayList<String> taskThread = new ArrayList<String>();
+						//ArrayList<String> taskThread = new ArrayList<String>();
 						ArrayList<Comment> comment= new ArrayList<Comment>();
 						for(int j = 0; j <  commentJson.size(); j++) {
 							JSONObject comJSON = (JSONObject)commentJson.get(j);
-							taskThread.add((String)commentJson.get(j));
+							//taskThread.add((String)commentJson.get(j));
 							String CommentAuth = (String)comJSON.get(COMMENT_AUTH);
 							String Comment = (String)comJSON.get(COMMENT);
 							String ComDate = (String)comJSON.get(COMMENT_DATE);

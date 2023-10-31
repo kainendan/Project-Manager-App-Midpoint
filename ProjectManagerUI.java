@@ -5,6 +5,7 @@ public class ProjectManagerUI {
     public static void main(String[] args) {
 
         ArrayList<User> users = DataLoader.GetUsers();
+        ArrayList<Project> project= DataLoader.GetProjects();
 		ArrayList<Task> task =  DataLoader.GetTask();
 		ProjectManagerUI ui = new ProjectManagerUI();
 	
