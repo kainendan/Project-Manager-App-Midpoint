@@ -74,11 +74,6 @@ public class ProjectManagerUI {
                         break;
                 }
             }
-
         }
-    }
-
-    
-
-    
+    } 
 }
