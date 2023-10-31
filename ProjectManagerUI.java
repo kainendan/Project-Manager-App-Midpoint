@@ -66,7 +66,7 @@ public class ProjectManagerUI {
                         //projectApp.createTask();
                         break;
                     case 5:
-                        running = false;
+                        isLoggedIn = false;
                         user.logout();
                         break;
                     default:
