@@ -1,19 +1,19 @@
 [
   {
     "Projectid":"b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
-    "projectName": "Project 1",
+    "projectName": "Electric Missiles",
     "projectDescription": "This is project 1",
     "projectAuthor": "Bob Smith"
   },
   {
     "Projectid":"a32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
-    "projectName": "Project 2",
+    "projectName": "Soap Free Washers",
     "projectDescription": "This is project 2",
     "projectAuthor": "John Doe"
   },
   {
     "Projectid":"c32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
-    "projectName": "Project 3",
+    "projectName": "Air Computers",
     "projectDescription": "This is project 3",
     "projectAuthor": "Jane Doe"
   }

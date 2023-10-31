@@ -101,4 +101,10 @@ public String getColor() {
     return color;
 }
 
+/*public ArrayList<Comment> addComment() {
+    User user;
+
+
+    return Comment(user.getUserName(), comme);
+} */
 }
