@@ -7,13 +7,7 @@ public class ProjectManagerUI {
         ArrayList<User> users = DataLoader.GetUsers();
 		ArrayList<Task> task =  DataLoader.GetTask();
 		ProjectManagerUI ui = new ProjectManagerUI();
-		
-  	    for(int i= 0 ; i < users.size(); i++ ){
-			System.out.println(users.get(i));
-  	    }
-		for(int j = 0; j < task.size(); j++) {
-			System.out.println(task.get(j));
-		}
+	
 		ui.run();
     }
 
