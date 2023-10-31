@@ -63,6 +63,15 @@ public class Project{
         projectThread.add(comment);
     }
 
+    public void printBoard() {
+        for (Column column : columns) {
+            System.out.println(column.getColumnName());
+            for (Task task : column.getTasks()) {
+                System.out.println(task.getTaskName());
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Project [ProjectId=" + UUID.randomUUID() + ", ProjectName=" + projectName + "]";

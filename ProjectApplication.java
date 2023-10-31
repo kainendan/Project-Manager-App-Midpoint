@@ -127,6 +127,28 @@ public class ProjectApplication {
         return matchingProjects;
     }
 
+    /**
+     * Opens a project with the given projectId.
+     *
+     * @param projectName The name of the project to be opened.
+     * @return True if the project is opened successfully, false otherwise.
+     */
+    public void openProject() {
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String projectName = getField("Enter the project name");
+
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                System.out.println(project.getProjectName());
+                System.out.println(project.getProjectDesc());
+                System.out.println(project.getProjectAuthor());
+                System.out.println(project.getId());
+            }
+        }
+    }
+
 
     /**
      * Creates a new task for a project.

@@ -7,7 +7,6 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 	
-	
 	public static void saveUsers() {
 		UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUserList();
@@ -68,6 +67,10 @@ public class DataWriter extends DataConstants {
 		projectDetails.put(PROJECT_NAME, project.getProjectName());
 		projectDetails.put(PROJECT_DESCRIPTION, project.getProjectDesc());
 		projectDetails.put(PROJECT_AUTHOR, project.getProjectAuthor());
+<<<<<<< HEAD
+=======
+		//projectDetails.put(PROJECT_TASK, project.getTasks());
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
 		
 		return projectDetails;
 	}
