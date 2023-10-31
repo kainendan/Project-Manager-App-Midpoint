@@ -73,4 +73,10 @@ public class Task extends Column{
 public String getTaskName() {
     return taskName;
 }
+/*public ArrayList<Comment> addComment() {
+    User user;
+
+
+    return Comment(user.getUserName(), comme);
+} */
 }

@@ -101,6 +101,8 @@ public class DataLoader extends DataConstants {
      * @return the Tasks from a json file into a arraylist
      */
 	public static ArrayList<Task> GetTask() {
+		User user;
+
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		try {
 					FileReader reader = new FileReader(TASK_FILE_NAME);
@@ -119,17 +121,19 @@ public class DataLoader extends DataConstants {
 						int taskPrivacyValue = Integer.parseInt(taskPrivacy);
 						String taskCateString = (String)taskJSON.get(TASK_CATE);
 						Category taskCategory = Category.valueOf(taskCateString);
-						
-						ArrayList<Comment> taskThread = new ArrayList<Comment>();
-						for(int j = 0; j < ((String) taskJSON.get(TASK_THREAD)).length(); j++) {
-							taskThread.add((Comment) taskJSON.get(j));
+						JSONArray commentJson = (JSONArray)taskJSON.get(TASK_THREAD);
+						ArrayList<String> taskThread = new ArrayList<String>();
+						ArrayList<Comment> comment= new ArrayList<Comment>();
+						for(int j = 0; j <  commentJson.size(); j++) {
+							taskThread.add((String)commentJson.get(j));
+							//comment.add(new Comment(getUserName(), "", ""));
 						}
 						
 						String inProgress = (String)taskJSON.get(TASK_INPROGRESS);
 						boolean inProgressBoo = Boolean.parseBoolean(inProgress);
 						String color = (String)taskJSON.get(TASK_COLOR);
 						
-						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, taskThread, inProgressBoo, taskPrivacyValue, color));
+						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, comment, inProgressBoo, taskPrivacyValue, color));
 					}
 
 
@@ -142,12 +146,6 @@ public class DataLoader extends DataConstants {
 
 
 	}
-		
-	
-
-
-
-
 }
 
 

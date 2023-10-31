@@ -78,5 +78,6 @@ public class UserList {
      */
     public void logout() {
         DataWriter.saveUsers();
+        System.exit(0);
     }
 }
