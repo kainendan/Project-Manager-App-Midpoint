@@ -70,6 +70,11 @@ public class Task extends Column{
         */
         return false;
     }
+
+
+public UUID getId() {
+        return id;
+    }
 public String getTaskName() {
     return taskName;
 }
