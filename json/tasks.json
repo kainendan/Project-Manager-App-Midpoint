@@ -18,7 +18,6 @@
     "taskCategory": "BUG",
     "taskThread":  [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
     "inProgress": true,
-    "inProgress": true,
     "taskPrivacy": "1",
     "color": "#0000FF"
   },
