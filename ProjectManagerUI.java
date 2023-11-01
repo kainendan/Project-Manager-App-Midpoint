@@ -80,8 +80,7 @@ public class ProjectManagerUI {
                      // Add the new task to the JSON file
                      DataWriter.addTask(newTask);
                     
-                     // Reload tasks from the JSON file
-                    List<Task> tasks = DataLoader.GetTask();
+                    
                         break;
                     case 5:
                         running = false;
