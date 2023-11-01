@@ -17,6 +17,8 @@ public class ProjectManagerUI {
         boolean running = true;
         ProjectApplication projectApp = new ProjectApplication();
         UserList user = new UserList();
+        TaskList task = new TaskList();
+        ProjectList project = new ProjectList();
 
         while(running){
             System.out.println("Welcome to Project Manager!");
@@ -58,11 +60,13 @@ public class ProjectManagerUI {
                         projectApp.openProject();
                         break;
                     case 4:
-                        //projectApp.createTask();
+                        projectApp.createTask();
                         break;
                     case 5:
                         isLoggedIn = false;
                         user.logout();
+                        DataWriter.saveProjects();
+                        DataWriter.saveTasks();
                         break;
                     default:
                         System.out.println("Invalid choice. Please try again.");

@@ -194,9 +194,11 @@ public class ProjectApplication {
             String addCom = getField("would you like to add a Comment. Y/N");
                 if(addCom.equalsIgnoreCase("Y")) {
                     createComment();
-                    checker = true;
+                    checker = false;
                 } else if(addCom.equalsIgnoreCase("N"))  {
                     comment.add(new Comment("N/A", "N/A", "N/A"));
+                    checker = false;
+                } else {
                     checker = true;
                 }
 
@@ -228,7 +230,7 @@ public class ProjectApplication {
     }
 
     public void printTask() {
-        
+
     }
 
     /**
