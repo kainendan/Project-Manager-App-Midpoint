@@ -78,6 +78,8 @@ public class UserList {
      */
     public void logout() {
         DataWriter.saveUsers();
+        DataWriter.saveProjects();
+        DataWriter.saveTasks();
         System.exit(0);
     }
 }

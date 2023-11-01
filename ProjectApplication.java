@@ -1,6 +1,5 @@
 //Nick Arboscello
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * The ProjectApplication class represents the main application for managing projects, users, and related functionality.
@@ -156,18 +155,63 @@ public class ProjectApplication {
      *
      * @return True if the task is created successfully, false otherwise.
      */
-    //public Task createTask(){
-        //ProjectList projectList = ProjectList.getInstance();
-        //ArrayList<Project> projects = projectList.getProjectList();
+    public Task createTask(){
+        Scanner scanner = new Scanner(System.in);
+        TaskList task = TaskList.getInstance();
+        ArrayList<Task> taskList = task.geTasksList();
+        ArrayList<Comment> comment = new ArrayList<Comment>();
+        boolean checker = true;
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+        Column column;
+        String taskName = getField("Enter the task name");
+        String taskDesc = getField("Enter the task description");
+        String taskAuthor = getField("Enter the task author");
+        String Catego = getField("Enter the task Category");
+        Catego = Catego.toUpperCase();
+        column = new Column(Catego);
+        
+        Category cat = Category.BUG;
+        System.out.println("Enter the priority.(enter a number)");
+        int taskPrio = scanner.nextInt();
+        System.out.println("Is it in progress True or false");
+        boolean inProgres = scanner.nextBoolean();
+        System.out.println("Enter the Privacy.(enter a number)");
+        int taskPriv = scanner.nextInt();
 
-        //String taskName = getField("Enter the task name");
-        //String taskDesc = getField("Enter the task description");
-        //String taskAuthor = getField("Enter the task author");
+        String color = getField("What color would you like it to be. Red, Blue, or Green ");
+        if(color.equalsIgnoreCase("red")) {
+            color = "ff0000";
+        } else if (color.equalsIgnoreCase("Blue")) { 
+            color = "0000FF";
+        } else if (color.equalsIgnoreCase("Green")) {
+            color = "008000";
+        } else {
+            color = "#000000";
+        }
 
-        //column.addTask(taskName, taskDesc, taskAuthor);
 
-        //return new Task(taskName, taskDesc, taskAuthor);
-    //}
+        
+        while(checker) {
+            String addCom = getField("would you like to add a Comment. Y/N");
+                if(addCom.equalsIgnoreCase("Y")) {
+                    createComment(comment);
+                    checker = false;
+                } else if(addCom.equalsIgnoreCase("N"))  {
+                    comment.add(new Comment("N/A", "N/A", "N/A"));
+                    checker = false;
+                } else {
+                    checker = true;
+                }
+
+
+        }
+       
+        column.addTask(taskName, taskDesc, taskAuthor);
+        TaskList.addTask(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
+
+        return new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
+    }
 
     /**
      * Creates a new comment for a task.
@@ -176,15 +220,19 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
-    public void createComment() {
+    public void createComment(ArrayList<Comment> comment) {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
 
         String commentAuth = getField("Enter the comment author");
         String commentText = getField("Enter the comment text");
         String commentDate = getField("Enter the comment date");
+        comment.add(new Comment(commentAuth, commentText, commentDate));
 
-        Comment comment = new Comment(commentAuth, commentText, commentDate);
+    }
+
+    public void printTask() {
+
     }
 
     /**

@@ -9,5 +9,17 @@ public class Comment {
         this.commentDate = commentDate;
     }
 
+    public String getAuthor() {
+        return commentAuthor;
+    }
+
+    public String getText() {
+        return commentText;
+    }
+
+    public String GetDate() {
+        return commentDate;
+    }
+    
     
 }

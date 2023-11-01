@@ -52,7 +52,7 @@ public class Project{
         }
     }
     public String getProjectAuthor() {
-        return user.getUserName();
+        return projectAuthor;
     }
 
     public void addColumn(Column column) {
