@@ -73,7 +73,23 @@ public class DataWriter extends DataConstants {
 	}
 
 	public static void saveTasks() {
+		/*ArrayList<Task> taskList = users.getTaskList();
+		JSONArray jsonTask = new JSONArray();
 		
+		//creating all the json objects
+		for(int i=0; i< taskList.size(); i++) {
+			jsonTask.add(getTaskJSON(taskList.get(i)));
+		}
+		
+		//Write JSON file
+        try (FileWriter file = new FileWriter(TASK_FILE_NAME)) {
+ 
+            file.write(jsonTask.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
 	}
 
 	public static JSONObject getTaskJSON(Task task) {
@@ -92,7 +108,7 @@ public class DataWriter extends DataConstants {
 		for(int i=0; i< comment.size(); i++) {
 			jsonComment.add(getCommentJSON);
 		}*/
-		
+
 		return taskDetails;
 	}
 
