@@ -143,7 +143,6 @@ public class ProjectApplication {
                 System.out.println("Project Name: "+project.getProjectName());
                 System.out.println("Description: "+project.getProjectDesc());
                 System.out.println("Project Author: "+project.getProjectAuthor());
-                System.out.println("ID: "+project.getId());
                  System.out.println("_____________________________________________");
                 project.printBoard();
 
@@ -151,7 +150,7 @@ public class ProjectApplication {
                     boolean projectMenuRunning = true;
                     while (projectMenuRunning) {
                         System.out.println("What would you like to do in " + project.getProjectName() + "?");
-                        System.out.println("1. Show tasks");
+                        System.out.println("1. Show board");
                         System.out.println("2. Move tasks");
                         System.out.println("3. Add comment");
                         System.out.println("4. Show comments");
@@ -162,7 +161,8 @@ public class ProjectApplication {
 
                         switch (projectChoice) {
                             case 1:
-                                System.out.println("Show task\n___________________");
+                                System.out.println("show board\n___________________");
+                                project.printBoard();
                                 break;
                             case 2:
                                 System.out.println("move task\n___________________");
@@ -212,6 +212,19 @@ public class ProjectApplication {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
         Column column;
+
+        System.out.println("Enter the project name in which you would like to add a task");
+        String projectName = scanner.nextLine();
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                System.out.println("Project Name: "+project.getProjectName());
+                System.out.println("Description: "+project.getProjectDesc());
+                System.out.println("Project Author: "+project.getProjectAuthor());
+                 System.out.println("_____________________________________________");
+                project.printBoard();
+            }
+        }
+
         String taskName = getField("Enter the task name");
         String taskDesc = getField("Enter the task description");
         String taskAuthor = getField("Enter the task author");
@@ -251,8 +264,6 @@ public class ProjectApplication {
                 } else {
                     checker = true;
                 }
-
-
         }
        
         column.addTask(taskName, taskDesc, taskAuthor);
@@ -289,7 +300,7 @@ public class ProjectApplication {
      * @param taskId The ID of the task to be edited.
      * @param task   The updated task information.
      */
-    public void editTask(int taskId, ArrayList<String> task) {
-       
+    public void editTask(String taskName, ArrayList<String> task) {
+        
     }
 }
