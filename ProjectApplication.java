@@ -195,7 +195,7 @@ public class ProjectApplication {
         while(checker) {
             String addCom = getField("would you like to add a Comment. Y/N");
                 if(addCom.equalsIgnoreCase("Y")) {
-                    createComment();
+                    createComment(comment);
                     checker = false;
                 } else if(addCom.equalsIgnoreCase("N"))  {
                     comment.add(new Comment("N/A", "N/A", "N/A"));
@@ -220,15 +220,14 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
-    public void createComment() {
+    public void createComment(ArrayList<Comment> comment) {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
 
         String commentAuth = getField("Enter the comment author");
         String commentText = getField("Enter the comment text");
         String commentDate = getField("Enter the comment date");
-
-        Comment comment = new Comment(commentAuth, commentText, commentDate);
+        comment.add(new Comment(commentAuth, commentText, commentDate));
 
     }
 
