@@ -15,13 +15,13 @@ public class DataLoader extends DataConstants {
 		ArrayList<Task> task =  GetTask();
 		ProjectManagerUI ui = new ProjectManagerUI();
 		
-  	    for(int i= 0 ; i < users.size(); i++ ){
+  	    /*for(int i= 0 ; i < users.size(); i++ ){
 			System.out.println(users.get(i));
   	    }
 		for(int j = 0; j < task.size(); j++) {
 			System.out.println(task.get(j));
 		}
-		ui.run();
+		//ui.run();
     }*/
 
 

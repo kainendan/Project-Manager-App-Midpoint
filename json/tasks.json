@@ -2,7 +2,7 @@
   {
     "taskDesc": "Curve the metal",
     "TaskInProgress": false,
-    "taskPrio": 1,
+    "taskPrio": "1",
     "taskThread": [
       {
         "Comment": "Comment goes here",
@@ -18,7 +18,7 @@
   {
     "taskDesc": "Make it possible",
     "TaskInProgress": false,
-    "taskPrio": 1,
+    "taskPrio": "1",
     "taskThread": [
       {
         "Comment": "Comment goes here",
@@ -34,7 +34,7 @@
   {
     "taskDesc": "Task 3 Description",
     "TaskInProgress": false,
-    "taskPrio": 1,
+    "taskPrio": "1",
     "taskThread": [
       {
         "Comment": "Comment goes here",

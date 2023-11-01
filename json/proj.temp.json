@@ -1,1 +1,20 @@
-[{"Projectid":"b32347fa-6fa2-4d8a-a512-d3a10dba5f9c","projectDescription":"This is electric missles","projectName":"Electric Missles","projectAuthor":"Atticus Madden"},{"Projectid":"a32347fa-6fa2-4d8a-a512-d3a10dba5f9c","projectDescription":"This is project 2","projectName":"Soap Free Washers","projectAuthor":"Atticus Madden"},{"Projectid":"c32347fa-6fa2-4d8a-a512-d3a10dba5f9c","projectDescription":"This is project 3","projectName":"Air Computers","projectAuthor":"Atticus Madden"}]
+[
+    {
+        "Projectid": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
+        "projectDescription": "This is electric missles",
+        "projectName": "Electric Missles",
+        "projectAuthor": "Atticus Madden"
+    },
+    {
+        "Projectid": "a32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
+        "projectDescription": "This is project 2",
+        "projectName": "Soap Free Washers",
+        "projectAuthor": "Atticus Madden"
+    },
+    {
+        "Projectid": "c32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
+        "projectDescription": "This is project 3",
+        "projectName": "Air Computers",
+        "projectAuthor": "Atticus Madden"
+    }
+]

@@ -1,5 +1,4 @@
 //Nick Arboscello
-import java.util.ArrayList;
 import java.util.*;
 
 /**
@@ -158,6 +157,8 @@ public class ProjectApplication {
      */
     public Task createTask(){
         Scanner scanner = new Scanner(System.in);
+        TaskList task = TaskList.getInstance();
+        ArrayList<Task> taskList = task.geTasksList();
         ArrayList<Comment> comment = new ArrayList<Comment>();
         boolean checker = true;
         ProjectList projectList = ProjectList.getInstance();
@@ -169,6 +170,7 @@ public class ProjectApplication {
         String Catego = getField("Enter the task Category");
         Catego = Catego.toUpperCase();
         column = new Column(Catego);
+        
         Category cat = Category.BUG;
         System.out.println("Enter the priority.(enter a number)");
         int taskPrio = scanner.nextInt();
@@ -206,6 +208,7 @@ public class ProjectApplication {
         }
        
         column.addTask(taskName, taskDesc, taskAuthor);
+        TaskList.addTask(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
 
         return new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
     }

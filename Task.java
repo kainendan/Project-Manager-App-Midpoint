@@ -81,8 +81,8 @@ public String getTaskDes() {
     return taskDesc;
 }
 
-public int getTaskPrio() {
-    return taskPrio;
+public String getTaskPrio() {
+    return ""+taskPrio+"";
 }
 
 public Category getCategory() {
