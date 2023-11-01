@@ -157,13 +157,26 @@ public class ProjectApplication {
      * @return True if the task is created successfully, false otherwise.
      */
     //public Task createTask(){
+        //boolean checker =  false;
         //ProjectList projectList = ProjectList.getInstance();
         //ArrayList<Project> projects = projectList.getProjectList();
 
         //String taskName = getField("Enter the task name");
         //String taskDesc = getField("Enter the task description");
         //String taskAuthor = getField("Enter the task author");
+        
+        //while(checker) {
+        //String addCom = getField("would you like to add a Comment. Y/N");
+        //if(addCom.equalsIgnoreCase("Y")) {
+            //createComment();
+            //checker = false;
+        //} else if(addCom.equalsIgnoreCase("N"))  {
+            //Comment comment = new Comment("N/A", "N/A", "N/A");
+            //Checker = false;
+        //}
 
+        //}
+       
         //column.addTask(taskName, taskDesc, taskAuthor);
 
         //return new Task(taskName, taskDesc, taskAuthor);
