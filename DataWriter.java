@@ -118,7 +118,7 @@ public class DataWriter extends DataConstants {
 
 	public static JSONObject getCommentJSON(Comment comment) {
 		JSONObject CommentDetail = new JSONObject();
-		System.out.println(comment.getAuthor()+" "+comment.getText()+" "+comment.GetDate());
+		//System.out.println(comment.getAuthor()+" "+comment.getText()+" "+comment.GetDate());
 		CommentDetail.put(COMMENT_AUTH, comment.getAuthor());
 		CommentDetail.put(COMMENT, comment.getText());
 		CommentDetail.put(COMMENT_DATE, comment.GetDate());
