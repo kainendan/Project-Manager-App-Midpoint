@@ -61,8 +61,8 @@ public class User {
         return email;
     }
 
-    public int getPrivacyLevel() {
-        return privacyLevel;
+    public String getPrivacyLevel() {
+        return ""+privacyLevel+"";
     }
 
     @Override

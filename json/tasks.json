@@ -11,14 +11,14 @@
       }
     ],
     "taskColor": null,
-    "taskPrivacy": false,
+    "taskPrivacy": "1",
     "taskName": "Curve the metal to make a cylindrical shape",
     "taskId": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
     "taskCategory": "BUG"
   },
   {
     "taskDesc": "Make it possible",
-    "TaskInProgress": false,
+    "TaskInProgress": "false",
     "taskPrio": "1",
     "taskThread": [
       {
@@ -28,14 +28,14 @@
       }
     ],
     "taskColor": null,
-    "taskPrivacy": false,
+    "taskPrivacy": "1",
     "taskName": "Make impossible burger possible",
     "taskId": "2ce85407-e210-4a50-b858-6ef235f4bfb4",
     "taskCategory": "BUG"
   },
   {
     "taskDesc": "Task 3 Description",
-    "TaskInProgress": false,
+    "TaskInProgress": "false",
     "taskPrio": "1",
     "taskThread": [
       {
@@ -45,26 +45,9 @@
       }
     ],
     "taskColor": null,
-    "taskPrivacy": false,
+    "taskPrivacy": "1",
     "taskName": "Task 3",
     "taskId": "9233f49d-83a9-4bed-bc99-b04984622e7e",
-    "taskCategory": "BUG"
-  },
-  {
-    "taskDesc": " task 4 description",
-    "TaskInProgress": true,
-    "taskPrio": "1",
-    "taskThread": [
-      {
-        "Comment": "comment goes here",
-        "ComAuth": "RJ",
-        "ComDate": "N\/A"
-      }
-    ],
-    "taskColor": "ff0000",
-    "taskPrivacy": true,
-    "taskName": "Task 4",
-    "taskId": "a4fbb32a-4330-4d58-a918-97c1b2f3a3d9",
     "taskCategory": "BUG"
   }
 ]

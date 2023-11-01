@@ -104,7 +104,7 @@ public class DataWriter extends DataConstants {
 		taskDetails.put(TASK_DESC, task.getTaskDes());
 		taskDetails.put(TASK_PRIO, task.getTaskPrio());
 		taskDetails.put(TASK_CATE, task.getCategory().toString());
-		taskDetails.put(TASK_PRIV, task.getInProgress());
+		taskDetails.put(TASK_PRIV, task.getTaskPrivacy());
 		
 
 		taskDetails.put(TASK_INPROGRESS, task.getInProgress());

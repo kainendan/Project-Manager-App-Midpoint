@@ -95,8 +95,14 @@ public ArrayList<Comment> getComments() {
 public boolean getInProgress() {
     return inProgress;
 } 
+public String getInProgressString() {
+    return ""+inProgress;
+}
 public int getTaskPrivacy() {
     return taskPrivacy;
+}
+public String getTaskPrivacyString() {
+    return ""+taskPrivacy+"";
 }
 
 public String getColor() {
