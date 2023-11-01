@@ -17,6 +17,10 @@ public class TaskList {
         return taskList;
     }
 
+    public ArrayList<Task> geTasksList() {
+        return tasks;
+    }
+
     public static void addTask(String taskName, String taskDesc, int taskPrio, Category taskCategory, ArrayList<Comment> taskThread, boolean inProgress, int taskPrivacy, String color) {
         tasks.add(new Task(taskName, taskDesc, taskPrio, taskCategory, taskThread, inProgress, taskPrivacy, color));
     }

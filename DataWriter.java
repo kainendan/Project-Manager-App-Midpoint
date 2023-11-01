@@ -73,7 +73,8 @@ public class DataWriter extends DataConstants {
 	}
 
 	public static void saveTasks() {
-		/*ArrayList<Task> taskList = users.getTaskList();
+		TaskList task = TaskList.getInstance();
+		ArrayList<Task> taskList = task.geTasksList();
 		JSONArray jsonTask = new JSONArray();
 		
 		//creating all the json objects
@@ -89,7 +90,7 @@ public class DataWriter extends DataConstants {
  
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 	}
 
 	public static JSONObject getTaskJSON(Task task) {
