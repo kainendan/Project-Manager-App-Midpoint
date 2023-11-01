@@ -1,6 +1,6 @@
 //Nick Arboscello
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * The ProjectApplication class represents the main application for managing projects, users, and related functionality.
@@ -157,6 +157,8 @@ public class ProjectApplication {
      * @return True if the task is created successfully, false otherwise.
      */
     public Task createTask(){
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Comment> comment = new ArrayList<Comment>();
         boolean checker = true;
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
@@ -164,8 +166,29 @@ public class ProjectApplication {
         String taskName = getField("Enter the task name");
         String taskDesc = getField("Enter the task description");
         String taskAuthor = getField("Enter the task author");
-        String Category = getField("Enter the task Category");
-        column = new Column(Category.toUpperCase());
+        String Catego = getField("Enter the task Category");
+        Catego = Catego.toUpperCase();
+        column = new Column(Catego);
+        Category cat = Category.BUG;
+        System.out.println("Enter the priority.(enter a number)");
+        int taskPrio = scanner.nextInt();
+        System.out.println("Is it in progress True or false");
+        boolean inProgres = scanner.nextBoolean();
+        System.out.println("Enter the Privacy.(enter a number)");
+        int taskPriv = scanner.nextInt();
+
+        String color = getField("What color would you like it to be. Red, Blue, or Green ");
+        if(color.equalsIgnoreCase("red")) {
+            color = "ff0000";
+        } else if (color.equalsIgnoreCase("Blue")) { 
+            color = "0000FF";
+        } else if (color.equalsIgnoreCase("Green")) {
+            color = "008000";
+        } else {
+            color = "#000000";
+        }
+
+
         
         while(checker) {
             String addCom = getField("would you like to add a Comment. Y/N");
@@ -173,15 +196,16 @@ public class ProjectApplication {
                     createComment();
                     checker = true;
                 } else if(addCom.equalsIgnoreCase("N"))  {
-                    Comment comment = new Comment("N/A", "N/A", "N/A");
+                    comment.add(new Comment("N/A", "N/A", "N/A"));
                     checker = true;
                 }
+
 
         }
        
         column.addTask(taskName, taskDesc, taskAuthor);
 
-        return new Task(taskName, taskDesc, taskAuthor);
+        return new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
     }
 
     /**
@@ -200,6 +224,11 @@ public class ProjectApplication {
         String commentDate = getField("Enter the comment date");
 
         Comment comment = new Comment(commentAuth, commentText, commentDate);
+
+    }
+
+    public void printTask() {
+        
     }
 
     /**
