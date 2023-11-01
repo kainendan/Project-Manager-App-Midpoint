@@ -40,10 +40,4 @@ public class ProjectList {
         projects.add(new Project(projectName, projectDesc, projectAuthor));
     }
 
-
-    /*public void saveProjects() {
-        DataWriter.saveProjects();
-    }*/
-
-
 }
