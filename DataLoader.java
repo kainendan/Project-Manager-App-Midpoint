@@ -9,21 +9,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
-	/*public static void main(String[] args) {
-
-        ArrayList<User> users = GetUsers();
-		ArrayList<Task> task =  GetTask();
-		ProjectManagerUI ui = new ProjectManagerUI();
-		
-  	    /*for(int i= 0 ; i < users.size(); i++ ){
-			System.out.println(users.get(i));
-  	    }
-		for(int j = 0; j < task.size(); j++) {
-			System.out.println(task.get(j));
-		}
-		//ui.run();
-    }*/
-
 
     /**
 	 * grabs the projects from the json file
