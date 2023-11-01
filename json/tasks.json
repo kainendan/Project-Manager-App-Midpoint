@@ -18,7 +18,7 @@
   },
   {
     "taskDesc": "Make it possible",
-    "TaskInProgress": "false",
+    "TaskInProgress": false,
     "taskPrio": "1",
     "taskThread": [
       {
@@ -35,7 +35,7 @@
   },
   {
     "taskDesc": "Task 3 Description",
-    "TaskInProgress": "false",
+    "TaskInProgress": false,
     "taskPrio": "1",
     "taskThread": [
       {

@@ -107,7 +107,7 @@ public class DataWriter extends DataConstants {
 		taskDetails.put(TASK_PRIV, task.getTaskPrivacyString());
 		
 
-		taskDetails.put(TASK_INPROGRESS, task.getInProgressString());
+		taskDetails.put(TASK_INPROGRESS, task.getInProgress());
 		taskDetails.put(TASK_COLOR, task.getColor());
 		
 		for(int i=0; i< comments.size(); i++) {
