@@ -1,70 +1,35 @@
 [
-  {
-    "taskDesc": "Curve the metal",
-    "TaskInProgress": false,
-    "taskPrio": "1",
-    "taskThread": [
-      {
-        "Comment": "Comment goes here",
-        "ComAuth": "bob",
-        "ComDate": "N\/A"
-      }
-    ],
-    "taskColor": null,
-    "taskPrivacy": false,
-    "taskName": "Curve the metal to make a cylindrical shape",
-    "taskId": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
-    "taskCategory": "BUG"
-  },
-  {
-    "taskDesc": "Make it possible",
-    "TaskInProgress": false,
-    "taskPrio": "1",
-    "taskThread": [
-      {
-        "Comment": "Comment goes here",
-        "ComAuth": "bob",
-        "ComDate": "N\/A"
-      }
-    ],
-    "taskColor": null,
-    "taskPrivacy": false,
-    "taskName": "Make impossible burger possible",
-    "taskId": "2ce85407-e210-4a50-b858-6ef235f4bfb4",
-    "taskCategory": "BUG"
-  },
-  {
-    "taskDesc": "Task 3 Description",
-    "TaskInProgress": false,
-    "taskPrio": "1",
-    "taskThread": [
-      {
-        "Comment": "Comment goes here",
-        "ComAuth": "bob",
-        "ComDate": "N\/A"
-      }
-    ],
-    "taskColor": null,
-    "taskPrivacy": false,
-    "taskName": "Task 3",
-    "taskId": "9233f49d-83a9-4bed-bc99-b04984622e7e",
-    "taskCategory": "BUG"
-  },
-  {
-    "taskDesc": " task 4 description",
-    "TaskInProgress": true,
-    "taskPrio": "1",
-    "taskThread": [
-      {
-        "Comment": "comment goes here",
-        "ComAuth": "RJ",
-        "ComDate": "N\/A"
-      }
-    ],
-    "taskColor": "ff0000",
-    "taskPrivacy": true,
-    "taskName": "Task 4",
-    "taskId": "a4fbb32a-4330-4d58-a918-97c1b2f3a3d9",
-    "taskCategory": "BUG"
-  }
-]
+    {
+      "taskId": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
+      "taskName": "Curve the metal to make a cylindrical shape",
+      "taskDesc": "Curve the metal",
+      "taskPrio": "1",
+      "taskCategory": "BUG",
+      "taskThread": [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
+      "inProgress": false,
+      "taskPrivacy": "1",
+      "color": "#ff0000"
+    },
+    {
+      "taskId": "2ce85407-e210-4a50-b858-6ef235f4bfb4",
+      "taskName": "Make impossible burger possible",
+      "taskDesc": "Make it possible",
+      "taskPrio": "1",
+      "taskCategory": "ElectricMissles",
+      "taskThread":  [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
+      "inProgress": true,
+      "taskPrivacy": "1",
+      "color": "#0000FF"
+    },
+    {
+      "taskId": "9233f49d-83a9-4bed-bc99-b04984622e7e",
+      "taskName": "Task 3",
+      "taskDesc": "Task 3 Description",
+      "taskPrio": "1",
+      "taskCategory": "ElectricMissles",
+      "taskThread": [{"ComAuth": "bob", "Comment": "Comment goes here","ComDate": "N/A"}],
+      "inProgress": true,
+      "taskPrivacy": "1",
+      "color": "#008000"
+    }
+  ]
