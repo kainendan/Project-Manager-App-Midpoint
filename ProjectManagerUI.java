@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 public class ProjectManagerUI {
     
     public static void main(String[] args) {
@@ -73,11 +75,13 @@ public class ProjectManagerUI {
                      ArrayList<Comment> taskThread = new ArrayList<Comment>();
                      
                      // Create a new Task object with the collected details
-                     Task newTask = new Task(taskName, taskDesc, 3 ,taskCategory, taskThread, true, 1, "#FF0000");
+                     Task newTask = new Task(UUID.randomUUID(),taskName, taskDesc, 3 ,taskCategory, taskThread, true, 1, "#FF0000");
 
                      // Add the new task to the JSON file
                      DataWriter.addTask(newTask);
                     
+                     // Reload tasks from the JSON file
+                    List<Task> tasks = DataLoader.GetTask();
                         break;
                     case 5:
                         running = false;

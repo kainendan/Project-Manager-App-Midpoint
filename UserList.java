@@ -79,4 +79,14 @@ public class UserList {
     public void logout() {
         DataWriter.saveUsers();
     }
+
+    //finds user
+    public User getUserByUsername(String username) {
+        for (User user : users) {
+            if (user.getUserName().equals(username)) {
+                return user;
+            }
+        }
+        return null; // Return null if the user with the given username is not found
+    }
 }

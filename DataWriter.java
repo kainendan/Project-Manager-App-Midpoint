@@ -2,6 +2,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.json.simple.JSONArray;
@@ -110,5 +111,33 @@ public class DataWriter extends DataConstants {
 			e.printStackTrace();
 		}
 	}
+
+	public static void saveFormattedTasks(List<Task> tasks) {
+    JSONArray taskArray = new JSONArray();
+
+    for (Task task : tasks) {
+        JSONObject taskObject = new JSONObject();
+
+        taskObject.put("taskId", task.getId().toString());
+        taskObject.put("taskName", task.getTaskName());
+        taskObject.put("taskDesc", task.getTaskDesc());
+        taskObject.put("taskPrio", String.valueOf(task.getTaskPrio()));
+        taskObject.put("taskCategory", task.getTaskCategory().toString());
+        taskObject.put("taskThread", task.getTaskThread());
+        taskObject.put("inProgress", task.isInProgress());
+        taskObject.put("taskPrivacy", String.valueOf(task.getTaskPrivacy()));
+        taskObject.put("color", task.getColor());
+
+        taskArray.add(taskObject);
+    }
+
+    try (FileWriter file = new FileWriter(TASK_FILE_NAME)) {
+        file.write(taskArray.toJSONString());
+        file.flush();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 }
 
