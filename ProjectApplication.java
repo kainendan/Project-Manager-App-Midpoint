@@ -135,18 +135,66 @@ public class ProjectApplication {
     public void openProject() {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
-
+        Scanner input = new Scanner(System.in);
         String projectName = getField("Enter the project name");
 
         for (Project project : projects) {
             if (project.getProjectName().equals(projectName)) {
-                System.out.println(project.getProjectName());
-                System.out.println(project.getProjectDesc());
-                System.out.println(project.getProjectAuthor());
-                System.out.println(project.getId());
+                System.out.println("Project Name: "+project.getProjectName());
+                System.out.println("Description: "+project.getProjectDesc());
+                System.out.println("Project Author: "+project.getProjectAuthor());
+                System.out.println("ID: "+project.getId());
+                 System.out.println("_____________________________________________");
                 project.printBoard();
+
+                if (project != null) {
+                    boolean projectMenuRunning = true;
+                    while (projectMenuRunning) {
+                        System.out.println("What would you like to do in " + project.getProjectName() + "?");
+                        System.out.println("1. Show tasks");
+                        System.out.println("2. Move tasks");
+                        System.out.println("3. Add comment");
+                        System.out.println("4. Show comments");
+                        System.out.println("5. Go back");
+                         System.out.println("_________________________");
+                        int projectChoice = input.nextInt();
+                        input.nextLine();
+
+                        switch (projectChoice) {
+                            case 1:
+                                System.out.println("Show task\n___________________");
+                                break;
+                            case 2:
+                                System.out.println("move task\n___________________");
+                                break;
+                            case 3:
+                                System.out.println("add comm\n___________________");
+                                break;
+                            case 4:
+                                System.out.println("show comm\n___________________");
+                                break;
+                            case 5:
+                                projectMenuRunning = false;
+                                break;
+                            default:
+                                System.out.println("Invalid choice. Please try again.");
+                                break;
+                        }
+                    }
+                } else {
+                    System.out.println("Project not found.");
+                }
+
+
             }
+
+                
+
+
         }
+
+         
+
     }
 
 

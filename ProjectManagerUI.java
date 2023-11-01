@@ -46,7 +46,7 @@ public class ProjectManagerUI {
             boolean isLoggedIn = true;
 
             while(isLoggedIn){
-                System.out.println("Would you like to:\n 1. View Projects\n 2. Create Project\n 3. Open Project\n 4. Create a Task\n 5. Exit");
+                System.out.println("---------\nMain Menu\n---------\nWould you like to:\n 1. View Projects\n 2. Create Project\n 3. Open Project\n 4. Create a Task\n 5. Exit");
                 int choice2 = input.nextInt();
                 input.nextLine();
                 switch(choice2){
