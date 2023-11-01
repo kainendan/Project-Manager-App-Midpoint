@@ -73,6 +73,35 @@ public class Task extends Column{
 public String getTaskName() {
     return taskName;
 }
+public UUID getId() {
+    return id;
+}
+
+public String getTaskDes() {
+    return taskDesc;
+}
+
+public int getTaskPrio() {
+    return taskPrio;
+}
+
+public Category getCategory() {
+    return taskCategory;
+}
+public ArrayList<Comment> getComments() {
+    return taskThread;
+}
+
+public boolean getInProgress() {
+    return inProgress;
+} 
+public int getTaskPrivacy() {
+    return taskPrivacy;
+}
+
+public String getColor() {
+    return color;
+}
 /*public ArrayList<Comment> addComment() {
     User user;
 

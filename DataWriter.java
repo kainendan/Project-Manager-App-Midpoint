@@ -71,6 +71,39 @@ public class DataWriter extends DataConstants {
 		
 		return projectDetails;
 	}
+
+	public static void saveTasks() {
+		
+	}
+
+	public static JSONObject getTaskJSON(Task task) {
+		JSONArray jsonComment = new JSONArray();
+		JSONObject taskDetails = new JSONObject();
+		taskDetails.put(TASK_ID, task.getId().toString());
+		taskDetails.put(TASK_NAME, task.getTaskName());
+		taskDetails.put(TASK_DESC, task.getTaskDes());
+		taskDetails.put(TASK_PRIO, task.getTaskPrio());
+		taskDetails.put(TASK_CATE, task.getCategory());
+		taskDetails.put(TASK_THREAD, task.getComments());
+
+		taskDetails.put(TASK_INPROGRESS, task.getInProgress());
+		taskDetails.put(TASK_COLOR, task.getColor());
+		/*ArrayList<Comment> comment= new ArrayList<Comment>();
+		for(int i=0; i< comment.size(); i++) {
+			jsonComment.add(getCommentJSON);
+		}*/
+		
+		return taskDetails;
+	}
+
+	/*public JSONObject getCommentJSON(Comment comment) {
+		JSONObject CommentDetail = new JSONObject();
+		CommentDetail.put(COMMENT_AUTH, comment.getAuthor());
+		CommentDetail.put(COMMENT, comment.getText());
+		CommentDetail.put(COMMENT_DATE, comment.GetDate());
+		return CommentDetail;
+	}*/
+	
 	
 
 }
