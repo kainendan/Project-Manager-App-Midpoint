@@ -94,32 +94,36 @@ public class DataWriter extends DataConstants {
 	}
 
 	public static JSONObject getTaskJSON(Task task) {
-		JSONArray jsonComment = new JSONArray();
+		JSONArray jsonComments = new JSONArray();
 		JSONObject taskDetails = new JSONObject();
+		ArrayList<Comment> comments = task.getComments();
 		taskDetails.put(TASK_ID, task.getId().toString());
 		taskDetails.put(TASK_NAME, task.getTaskName());
 		taskDetails.put(TASK_DESC, task.getTaskDes());
 		taskDetails.put(TASK_PRIO, task.getTaskPrio());
 		taskDetails.put(TASK_CATE, task.getCategory().toString());
-		taskDetails.put(TASK_THREAD, task.getComments());
+		
 
 		taskDetails.put(TASK_INPROGRESS, task.getInProgress());
 		taskDetails.put(TASK_COLOR, task.getColor());
-		/*ArrayList<Comment> comment= new ArrayList<Comment>();
-		for(int i=0; i< comment.size(); i++) {
-			jsonComment.add(getCommentJSON);
-		}*/
+		
+		for(int i=0; i< comments.size(); i++) {
+			JSONObject commentJSON = getCommentJSON(comments.get(i));
+			jsonComments.add(commentJSON);
+		}
+		taskDetails.put(TASK_THREAD, jsonComments);
 
 		return taskDetails;
 	}
 
-	/*public JSONObject getCommentJSON(Comment comment) {
+	public static JSONObject getCommentJSON(Comment comment) {
 		JSONObject CommentDetail = new JSONObject();
+		System.out.println(comment.getAuthor()+" "+comment.getText()+" "+comment.GetDate());
 		CommentDetail.put(COMMENT_AUTH, comment.getAuthor());
 		CommentDetail.put(COMMENT, comment.getText());
 		CommentDetail.put(COMMENT_DATE, comment.GetDate());
 		return CommentDetail;
-	}*/
+	}
 	
 	
 

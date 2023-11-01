@@ -129,9 +129,9 @@ public class DataLoader extends DataConstants {
 							JSONObject comJSON = (JSONObject)commentJson.get(j);
 							//taskThread.add((String)commentJson.get(j));
 							String CommentAuth = (String)comJSON.get(COMMENT_AUTH);
-							String Comment = (String)comJSON.get(COMMENT);
+							String CommentText = (String)comJSON.get(COMMENT);
 							String ComDate = (String)comJSON.get(COMMENT_DATE);
-							comment.add(new Comment(CommentAuth, Comment, ComDate));
+							comment.add(new Comment(CommentAuth, CommentText, ComDate));
 						}
 						
 						String inProgress = (String)taskJSON.get(TASK_INPROGRESS);
