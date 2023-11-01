@@ -156,31 +156,33 @@ public class ProjectApplication {
      *
      * @return True if the task is created successfully, false otherwise.
      */
-    //public Task createTask(){
-        //boolean checker =  false;
-        //ProjectList projectList = ProjectList.getInstance();
-        //ArrayList<Project> projects = projectList.getProjectList();
-
-        //String taskName = getField("Enter the task name");
-        //String taskDesc = getField("Enter the task description");
-        //String taskAuthor = getField("Enter the task author");
+    public Task createTask(){
+        boolean checker = true;
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+        Column column;
+        String taskName = getField("Enter the task name");
+        String taskDesc = getField("Enter the task description");
+        String taskAuthor = getField("Enter the task author");
+        String Category = getField("Enter the task Category");
+        column = new Column(Category.toUpperCase());
         
-        //while(checker) {
-        //String addCom = getField("would you like to add a Comment. Y/N");
-        //if(addCom.equalsIgnoreCase("Y")) {
-            //createComment();
-            //checker = false;
-        //} else if(addCom.equalsIgnoreCase("N"))  {
-            //Comment comment = new Comment("N/A", "N/A", "N/A");
-            //Checker = false;
-        //}
+        while(checker) {
+            String addCom = getField("would you like to add a Comment. Y/N");
+                if(addCom.equalsIgnoreCase("Y")) {
+                    createComment();
+                    checker = true;
+                } else if(addCom.equalsIgnoreCase("N"))  {
+                    Comment comment = new Comment("N/A", "N/A", "N/A");
+                    checker = true;
+                }
 
-        //}
+        }
        
-        //column.addTask(taskName, taskDesc, taskAuthor);
+        column.addTask(taskName, taskDesc, taskAuthor);
 
-        //return new Task(taskName, taskDesc, taskAuthor);
-    //}
+        return new Task(taskName, taskDesc, taskAuthor);
+    }
 
     /**
      * Creates a new comment for a task.
