@@ -70,48 +70,50 @@ public class Task extends Column{
         */
         return false;
     }
-public String getTaskName() {
-    return taskName;
-}
-public UUID getId() {
-    return id;
-}
+    
+    
+    public String getTaskName() {
+        return taskName;
+    }
+    public UUID getId() {
+        return id;
+    }
 
-public String getTaskDes() {
-    return taskDesc;
-}
+    public String getTaskDes() {
+        return taskDesc;
+    }
 
-public String getTaskPrio() {
-    return ""+taskPrio+"";
-}
+    public String getTaskPrio() {
+        return ""+taskPrio+"";
+    }
 
-public Category getCategory() {
-    return taskCategory;
-}
-public ArrayList<Comment> getComments() {
-    return taskThread;
-}
+    public Category getCategory() {
+        return taskCategory;
+    }
+    public ArrayList<Comment> getComments() {
+        return taskThread;
+    }
 
-public boolean getInProgress() {
-    return inProgress;
-} 
-public String getInProgressString() {
-    return ""+inProgress;
-}
-public int getTaskPrivacy() {
-    return taskPrivacy;
-}
-public String getTaskPrivacyString() {
-    return ""+taskPrivacy+"";
-}
+    public boolean getInProgress() {
+        return inProgress;
+    } 
+    public String getInProgressString() {
+        return ""+inProgress;
+    }
+    public int getTaskPrivacy() {
+        return taskPrivacy;
+    }
+    public String getTaskPrivacyString() {
+        return ""+taskPrivacy+"";
+    }
 
-public String getColor() {
-    return color;
-}
-/*public ArrayList<Comment> addComment() {
-    User user;
+    public String getColor() {
+        return color;
+    }
+    /*public ArrayList<Comment> addComment() {
+        User user;
 
 
-    return Comment(user.getUserName(), comme);
-} */
+        return Comment(user.getUserName(), comme);
+    } */
 }
