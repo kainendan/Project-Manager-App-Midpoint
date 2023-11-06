@@ -1,5 +1,6 @@
 //Nick Arboscello
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The ProjectApplication class represents the main application for managing projects, users, and related functionality.
@@ -9,6 +10,8 @@ public class ProjectApplication {
     private UserList userList;
     private User user;
   
+    private Scanner scanner = new Scanner(System.in);
+
     /**
      * Constructs a new ProjectApplication object.
      */
@@ -19,12 +22,34 @@ public class ProjectApplication {
     }
 
     /**
+     * Creates a new user account.
+     *
+     * @param firstName The first name of the user.
+     * @param lastName  The last name of the user.
+     * @return The newly created User object.
+     */
+    public void signUp() {
+        UserList userList = UserList.getInstance();
+
+           String userName = getField("Enter your username");
+           String password = getField("Enter your password");
+           String firstName = getField("Enter your first name");
+           String lastName = getField("Enter your last name");
+           String email = getField("Enter your email");
+           int privacyLevel = Integer.parseInt(getField("Enter your privacy level"));
+
+           UserList.addUser(userName, password, firstName, lastName, email, privacyLevel);
+           DataWriter.saveUsers();
+   }
+
+    /**
      * Attempts to log in a user with the given username and password.
      *
      * @param username The username of the user.
      * @param password The password of the user.
-     * @return The User object if login is successful, or null if login fails.
+     * @return The User object if login is successful, repeat the login process otherwise, exit if the user chooses to.
      */
+<<<<<<< HEAD
     public User login(String username, String password) {
 <<<<<<< HEAD
         // Implementation details for login.
@@ -34,13 +59,29 @@ public class ProjectApplication {
        
         return null; 
 >>>>>>> refs/remotes/origin/main
+=======
+    public void logIn() {
+        UserList userList = UserList.getInstance();
+
+        String userName = getField("Enter your username");
+        String password = getField("Enter your password");
+
+        if (UserList.isValidLogin(userName, password)) {
+            System.out.println("Login successful!");
+            user = UserList.getUser(userName);
+        } else {
+            System.out.println("Invalid login. Please try again.");
+            logIn();
+        }
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
-     * Creates a new user account.
-     *
-     * @return The newly created User object.
+     * Gets a field from the user.
+     * @param prompt
+     * @return
      */
+<<<<<<< HEAD
     public User signUp() {
 <<<<<<< HEAD
         // Implementation details for user signup.
@@ -50,6 +91,11 @@ public class ProjectApplication {
         //return new User();
         return null; 
 >>>>>>> refs/remotes/origin/main
+=======
+    private String getField(String prompt) {
+        System.out.println(prompt + ": ");
+        return scanner.nextLine();
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
@@ -57,6 +103,7 @@ public class ProjectApplication {
      *
      * @return A list of all projects.
      */
+<<<<<<< HEAD
     public ArrayList<Project> getAllProjects() {
 <<<<<<< HEAD
         // Implementation details for getting all projects.
@@ -66,6 +113,32 @@ public class ProjectApplication {
       
         return new ArrayList<>(); 
 >>>>>>> refs/remotes/origin/main
+=======
+    public void getAllProjects() {
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        for (Project project : projects) {
+            System.out.println(project.getProjectName());
+        }
+    }
+
+    /**
+     * Creates a new project.
+     *
+     * @return True if the project is created successfully, false otherwise.
+     */
+    public Project createProject() {
+        ProjectList projectList = ProjectList.getInstance();
+
+        String projectName = getField("Enter the project name");
+        String projectDesc = getField("Enter the project description");
+        String projectAuthor = getField("Enter the project author");
+
+        ProjectList.addProject(projectName, projectDesc, projectAuthor);
+
+        return new Project(projectName, projectDesc, projectAuthor);
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
@@ -75,6 +148,7 @@ public class ProjectApplication {
      */
     public ArrayList<Project> findProject() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Implementation details for finding projects.
         // Replace with actual logic.
         return new ArrayList<>(); // Placeholder return value.
@@ -82,15 +156,31 @@ public class ProjectApplication {
         
         return new ArrayList<>(); 
 >>>>>>> refs/remotes/origin/main
+=======
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String projectName = getField("Enter the project name");
+
+        ArrayList<Project> matchingProjects = new ArrayList<Project>();
+
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                matchingProjects.add(project);
+            }
+        }
+
+        return matchingProjects;
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
-     * Creates a new user account.
+     * Opens a project with the given projectId.
      *
-     * @param firstName The first name of the user.
-     * @param lastName  The last name of the user.
-     * @return The newly created User object.
+     * @param projectName The name of the project to be opened.
+     * @return True if the project is opened successfully, false otherwise.
      */
+<<<<<<< HEAD
     public User createAccount(String firstName, String lastName) {
 <<<<<<< HEAD
         // Implementation details for creating a user account.
@@ -119,14 +209,31 @@ public class ProjectApplication {
         return false; 
 >>>>>>> refs/remotes/origin/main
     }
+=======
+    public void openProject() {
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String projectName = getField("Enter the project name");
+
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                System.out.println(project.getProjectName());
+                System.out.println(project.getProjectDesc());
+                System.out.println(project.getProjectAuthor());
+                System.out.println(project.getId());
+            }
+        }
+    }
+
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
 
     /**
      * Creates a new task for a project.
      *
-     * @param taskName  The name of the task.
-     * @param taskDesc  The description of the task.
      * @return True if the task is created successfully, false otherwise.
      */
+<<<<<<< HEAD
     public boolean createTask(String taskName, String taskDesc) {
 <<<<<<< HEAD
         // Implementation details for creating a task.
@@ -137,6 +244,20 @@ public class ProjectApplication {
         return false; 
 >>>>>>> refs/remotes/origin/main
     }
+=======
+    //public Task createTask(){
+        //ProjectList projectList = ProjectList.getInstance();
+        //ArrayList<Project> projects = projectList.getProjectList();
+
+        //String taskName = getField("Enter the task name");
+        //String taskDesc = getField("Enter the task description");
+        //String taskAuthor = getField("Enter the task author");
+
+        //column.addTask(taskName, taskDesc, taskAuthor);
+
+        //return new Task(taskName, taskDesc, taskAuthor);
+    //}
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
 
     /**
      * Creates a new comment for a task.
@@ -145,12 +266,16 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
+<<<<<<< HEAD
     public boolean createComment(User commentAuth, String commentText) {
 <<<<<<< HEAD
         // Implementation details for creating a comment.
         // Replace with actual logic.
         return false; // Placeholder return value.
 =======
+=======
+    public boolean createComment(String commentText) {
+>>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
       
         return false;
 >>>>>>> refs/remotes/origin/main

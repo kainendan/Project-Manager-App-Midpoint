@@ -7,7 +7,7 @@ public class UserList {
     /**
      * Constructor for the list of users
      */
-    private UserList() {
+    public UserList() {
         users = new ArrayList<User>();
         users = DataLoader.GetUsers();
     }
@@ -18,7 +18,6 @@ public class UserList {
      */
     public static UserList getInstance() {
         if(userList == null) {
-            System.out.println("Creating a new user account: ");
             userList = new UserList();
         }
         return userList;
@@ -42,6 +41,7 @@ public class UserList {
      */
     public static void addUser(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
         users.add(new User(userName, password, firstName, lastName, email, privacyLevel));
+        
     }
 
     /**
@@ -57,6 +57,20 @@ public class UserList {
             }
         }
         return false;
+    }
+
+    /**
+     * Get user from the userList
+     * @param userName
+     * @return the user
+     */
+    public static User getUser(String userName) {
+        for(User user : users) {
+            if(user.getUserName().equals(userName)) {
+                return user;
+            }
+        }
+        return null;
     }
 
     /**

@@ -1,5 +1,6 @@
 [
   {
+    "id": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
     "userName": "bobsmith",
     "password": "password123",
     "firstName": "bob",
@@ -8,6 +9,7 @@
     "privacylevel": "1"
   },
   {
+    "id": "2ce85407-e210-4a50-b858-6ef235f4bfb4",
     "userName": "johndoe",
     "password": "password123",
     "firstName": "john",
@@ -16,6 +18,7 @@
     "privacylevel": "2"
   },
   {
+    "id": "9233f49d-83a9-4bed-bc99-b04984622e7e",
     "userName": "janedoe",
     "password": "password123",
     "firstName": "jane",

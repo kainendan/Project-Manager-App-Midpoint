@@ -14,36 +14,27 @@ public class RegisteredUser {
      * Constructs a new RegisteredUser object.
      */
     public RegisteredUser() {
-<<<<<<< HEAD
         // Constructor for RegisteredUser.
         // Initialize member variables as needed.
-=======
         
->>>>>>> refs/remotes/origin/main
     }
 
     /**
      * Adds a main project for the registered user.
      */
     public void addMainProject() {
-<<<<<<< HEAD
         // Implementation details for adding a main project.
         // Replace with actual logic.
-=======
         
->>>>>>> refs/remotes/origin/main
     }
 
     /**
      * Adds a project manager role for the registered user.
      */
     public void addProjectManager() {
-<<<<<<< HEAD
         // Implementation details for adding a project manager role.
         // Replace with actual logic.
-=======
         
->>>>>>> refs/remotes/origin/main
     }
 
     /**

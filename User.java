@@ -1,23 +1,13 @@
 // Nick Arboscello
-<<<<<<< HEAD
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-
-import java.io.FileWriter;
-import java.io.IOException;
-
-public class User {
-=======
-//import org.json.simple.JSONObject;
-//import org.json.simple.JSONValue;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.UUID;
 
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+
 public class User {
     private UUID id;
->>>>>>> refs/remotes/origin/main
     private String userName;
     private String password;
     private String firstName;
@@ -37,8 +27,6 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
-<<<<<<< HEAD
-=======
     public User(UUID id, String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
         this.id = id;
         this.userName = userName;
@@ -48,10 +36,13 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
+    
 
->>>>>>> refs/remotes/origin/main
 
     // Getters for the user's properties
+    public UUID getId() {
+        return id;
+    }
 
     public String getUserName() {
         return userName;
@@ -77,8 +68,12 @@ public class User {
         return privacyLevel;
     }
 
+    @Override
+    public String toString() {
+        return "User [userId=" + UUID.randomUUID() + ", username=" + userName + "]";
+    }
+
     // Convert the User object to a JSON representation
-<<<<<<< HEAD
     public JSONObject toJSON() {
         JSONObject jsonUser = new JSONObject();
         jsonUser.put("userName", userName);
@@ -104,7 +99,6 @@ public class User {
             e.printStackTrace();
         }
     }
-=======
     //public JSONObject toJSON() {
         //JSONObject jsonUser = new JSONObject();
         //jsonUser.put("userName", userName);
@@ -116,6 +110,5 @@ public class User {
         //return jsonUser;
     //}
 
->>>>>>> refs/remotes/origin/main
 }
 
