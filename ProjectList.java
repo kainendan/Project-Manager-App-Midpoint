@@ -40,5 +40,4 @@ public class ProjectList {
         projects.add(new Project(projectName, projectDesc, projectAuthor));
     }
 
-
 }

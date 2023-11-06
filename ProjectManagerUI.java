@@ -5,15 +5,10 @@ public class ProjectManagerUI {
     public static void main(String[] args) {
 
         ArrayList<User> users = DataLoader.GetUsers();
+        ArrayList<Project> project= DataLoader.GetProjects();
 		ArrayList<Task> task =  DataLoader.GetTask();
 		ProjectManagerUI ui = new ProjectManagerUI();
-		
-  	    for(int i= 0 ; i < users.size(); i++ ){
-			System.out.println(users.get(i));
-  	    }
-		for(int j = 0; j < task.size(); j++) {
-			System.out.println(task.get(j));
-		}
+	
 		ui.run();
     }
 
@@ -22,6 +17,8 @@ public class ProjectManagerUI {
         boolean running = true;
         ProjectApplication projectApp = new ProjectApplication();
         UserList user = new UserList();
+        TaskList task = new TaskList();
+        ProjectList project = new ProjectList();
 
         while(running){
             System.out.println("Welcome to Project Manager!");
@@ -49,7 +46,7 @@ public class ProjectManagerUI {
             boolean isLoggedIn = true;
 
             while(isLoggedIn){
-                System.out.println("Would you like to:\n 1. View Projects\n 2. Create Project\n 3. Open Project\n 4. Create a Task\n 5. Exit");
+                System.out.println("---------\nMain Menu\n---------\nWould you like to:\n 1. View Projects\n 2. Create Project\n 3. Open Project\n 4. Create a Task\n 5. Exit");
                 int choice2 = input.nextInt();
                 input.nextLine();
                 switch(choice2){
@@ -61,41 +58,15 @@ public class ProjectManagerUI {
                         break;
                     case 3:
                         projectApp.openProject();
-                        {
-                            boolean isOpen = true;
-                            while(isOpen){
-                                System.out.println("Would you like to:\n 1. View Tasks\n 2. Create Column\n 3. Create Task\n 4. Write Comment\n 5. Exit");
-                                int choice3 = input.nextInt();
-                                input.nextLine();
-                                switch(choice3){
-                                    case 1:
-                                        //projectApp.getAllTasks();
-                                        break;
-                                    case 2:
-                                        //projectApp.createColumn();
-                                        break;
-                                    case 3:
-                                        //projectApp.createTask();
-                                        break;
-                                    case 4:
-                                        //projectApp.writeComment();
-                                        break;
-                                    case 5:
-                                        isOpen = false;
-                                        break;
-                                    default:
-                                        System.out.println("Invalid choice. Please try again.");
-                                        break;
-                                }
-                            }
-                        }
                         break;
                     case 4:
-                        //projectApp.createTask();
+                        projectApp.createTask();
                         break;
                     case 5:
-                        running = false;
+                        isLoggedIn = false;
                         user.logout();
+                        DataWriter.saveProjects();
+                        DataWriter.saveTasks();
                         break;
                     default:
                         System.out.println("Invalid choice. Please try again.");

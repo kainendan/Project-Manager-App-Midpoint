@@ -1,29 +1,29 @@
 [
   {
     "id": "b32347fa-6fa2-4d8a-a512-d3a10dba5f9c",
-    "userName": "bobsmith",
-    "password": "password123",
-    "firstName": "bob",
-    "lastName": "smith",
-    "email": "bobsmith@gmail.com",
+    "userName": "amadden",
+    "password": "asdf",
+    "firstName": "Atticus",
+    "lastName": "Madden",
+    "email": "amadden@gmail.com",
     "privacylevel": "1"
   },
   {
     "id": "2ce85407-e210-4a50-b858-6ef235f4bfb4",
-    "userName": "johndoe",
-    "password": "password123",
-    "firstName": "john",
-    "lastName": "doe",
-    "email": "johndoe@gmail.com",
+    "userName": "jgold",
+    "password": "asdf",
+    "firstName": "Jeff",
+    "lastName": "Goldblum",
+    "email": "jgold@gmail.com",
     "privacylevel": "2"
   },
   {
     "id": "9233f49d-83a9-4bed-bc99-b04984622e7e",
-    "userName": "janedoe",
-    "password": "password123",
-    "firstName": "jane",
-    "lastName": "doe",
-    "email": "janedoe@gmail.com",
+    "userName": "afinch",
+    "password": "asdf",
+    "firstName": "Atticus",
+    "lastName": "Finch",
+    "email": "afinch@gmail.com",
     "privacylevel": "3"
   }
 ]

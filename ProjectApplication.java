@@ -213,17 +213,66 @@ public class ProjectApplication {
     public void openProject() {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
-
+        Scanner input = new Scanner(System.in);
         String projectName = getField("Enter the project name");
 
         for (Project project : projects) {
             if (project.getProjectName().equals(projectName)) {
-                System.out.println(project.getProjectName());
-                System.out.println(project.getProjectDesc());
-                System.out.println(project.getProjectAuthor());
-                System.out.println(project.getId());
+                System.out.println("Project Name: "+project.getProjectName());
+                System.out.println("Description: "+project.getProjectDesc());
+                System.out.println("Project Author: "+project.getProjectAuthor());
+                 System.out.println("_____________________________________________");
+                project.printBoard();
+
+                if (project != null) {
+                    boolean projectMenuRunning = true;
+                    while (projectMenuRunning) {
+                        System.out.println("What would you like to do in " + project.getProjectName() + "?");
+                        System.out.println("1. Show board");
+                        System.out.println("2. Move tasks");
+                        System.out.println("3. Add comment");
+                        System.out.println("4. Show comments");
+                        System.out.println("5. Go back");
+                         System.out.println("_________________________");
+                        int projectChoice = input.nextInt();
+                        input.nextLine();
+
+                        switch (projectChoice) {
+                            case 1:
+                                System.out.println("show board\n___________________");
+                                project.printBoard();
+                                break;
+                            case 2:
+                                System.out.println("move task\n___________________");
+                                break;
+                            case 3:
+                                System.out.println("add comm\n___________________");
+                                break;
+                            case 4:
+                                System.out.println("show comm\n___________________");
+                                break;
+                            case 5:
+                                projectMenuRunning = false;
+                                break;
+                            default:
+                                System.out.println("Invalid choice. Please try again.");
+                                break;
+                        }
+                    }
+                } else {
+                    System.out.println("Project not found.");
+                }
+
+
             }
+
+                
+
+
         }
+
+         
+
     }
 
 >>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
@@ -233,31 +282,68 @@ public class ProjectApplication {
      *
      * @return True if the task is created successfully, false otherwise.
      */
-<<<<<<< HEAD
-    public boolean createTask(String taskName, String taskDesc) {
-<<<<<<< HEAD
-        // Implementation details for creating a task.
-        // Replace with actual logic.
-        return false; // Placeholder return value.
-=======
-    
-        return false; 
->>>>>>> refs/remotes/origin/main
-    }
-=======
     //public Task createTask(){
         //ProjectList projectList = ProjectList.getInstance();
         //ArrayList<Project> projects = projectList.getProjectList();
 
-        //String taskName = getField("Enter the task name");
-        //String taskDesc = getField("Enter the task description");
-        //String taskAuthor = getField("Enter the task author");
+        System.out.println("Enter the project name in which you would like to add a task");
+        String projectName = scanner.nextLine();
+        for (Project project : projects) {
+            if (project.getProjectName().equals(projectName)) {
+                System.out.println("Project Name: "+project.getProjectName());
+                System.out.println("Description: "+project.getProjectDesc());
+                System.out.println("Project Author: "+project.getProjectAuthor());
+                 System.out.println("_____________________________________________");
+                project.printBoard();
+            }
+        }
 
-        //column.addTask(taskName, taskDesc, taskAuthor);
+        String taskName = getField("Enter the task name");
+        String taskDesc = getField("Enter the task description");
+        String taskAuthor = getField("Enter the task author");
+        String Catego = getField("Enter the task Category");
+        Catego = Catego.toUpperCase();
+        column = new Column(Catego);
+        
+        Category cat = Category.BUG;
+        System.out.println("Enter the priority.(enter a number)");
+        int taskPrio = scanner.nextInt();
+        System.out.println("Is it in progress True or false");
+        boolean inProgres = scanner.nextBoolean();
+        System.out.println("Enter the Privacy.(enter a number)");
+        int taskPriv = scanner.nextInt();
+
+        String color = getField("What color would you like it to be. Red, Blue, or Green ");
+        if(color.equalsIgnoreCase("red")) {
+            color = "ff0000";
+        } else if (color.equalsIgnoreCase("Blue")) { 
+            color = "0000FF";
+        } else if (color.equalsIgnoreCase("Green")) {
+            color = "008000";
+        } else {
+            color = "#000000";
+        }
+
+
+        
+        while(checker) {
+            String addCom = getField("would you like to add a Comment. Y/N");
+                if(addCom.equalsIgnoreCase("Y")) {
+                    createComment(comment);
+                    checker = false;
+                } else if(addCom.equalsIgnoreCase("N"))  {
+                    comment.add(new Comment("N/A", "N/A", "N/A"));
+                    checker = false;
+                } else {
+                    checker = true;
+                }
+        }
+       
+        column.addTask(taskName, taskDesc, taskAuthor);
+        TaskList.addTask(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
 
         //return new Task(taskName, taskDesc, taskAuthor);
     //}
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
 
     /**
      * Creates a new comment for a task.
@@ -266,19 +352,9 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
-<<<<<<< HEAD
-    public boolean createComment(User commentAuth, String commentText) {
-<<<<<<< HEAD
-        // Implementation details for creating a comment.
-        // Replace with actual logic.
-        return false; // Placeholder return value.
-=======
-=======
     public boolean createComment(String commentText) {
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
       
         return false;
->>>>>>> refs/remotes/origin/main
     }
 
     /**
@@ -288,12 +364,7 @@ public class ProjectApplication {
      * @param task   The updated task information.
      */
     public void editTask(int taskId, ArrayList<String> task) {
-<<<<<<< HEAD
-        // Implementation details for editing a task.
-        // Replace with actual logic.
-=======
        
->>>>>>> refs/remotes/origin/main
     }
 }
 

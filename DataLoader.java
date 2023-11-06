@@ -9,21 +9,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
-	/*public static void main(String[] args) {
-
-        ArrayList<User> users = GetUsers();
-		ArrayList<Task> task =  GetTask();
-		ProjectManagerUI ui = new ProjectManagerUI();
-		
-  	    for(int i= 0 ; i < users.size(); i++ ){
-			System.out.println(users.get(i));
-  	    }
-		for(int j = 0; j < task.size(); j++) {
-			System.out.println(task.get(j));
-		}
-		ui.run();
-    }*/
-
 
     /**
 	 * grabs the projects from the json file
@@ -101,6 +86,8 @@ public class DataLoader extends DataConstants {
      * @return the Tasks from a json file into a arraylist
      */
 	public static ArrayList<Task> GetTask() {
+		 ArrayList<User> users = new ArrayList<User>();
+
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		try {
 					FileReader reader = new FileReader(TASK_FILE_NAME);
@@ -120,16 +107,23 @@ public class DataLoader extends DataConstants {
 						String taskCateString = (String)taskJSON.get(TASK_CATE);
 						Category taskCategory = Category.valueOf(taskCateString);
 						
-						ArrayList<Comment> taskThread = new ArrayList<Comment>();
-						for(int j = 0; j < ((String) taskJSON.get(TASK_THREAD)).length(); j++) {
-							taskThread.add((Comment) taskJSON.get(j));
+						JSONArray commentJson = (JSONArray)taskJSON.get(TASK_THREAD);
+						//ArrayList<String> taskThread = new ArrayList<String>();
+						ArrayList<Comment> comment= new ArrayList<Comment>();
+						for(int j = 0; j <  commentJson.size(); j++) {
+							JSONObject comJSON = (JSONObject)commentJson.get(j);
+							//taskThread.add((String)commentJson.get(j));
+							String CommentAuth = (String)comJSON.get(COMMENT_AUTH);
+							String CommentText = (String)comJSON.get(COMMENT);
+							String ComDate = (String)comJSON.get(COMMENT_DATE);
+							comment.add(new Comment(CommentAuth, CommentText, ComDate));
 						}
 						
-						String inProgress = (String)taskJSON.get(TASK_INPROGRESS);
-						boolean inProgressBoo = Boolean.parseBoolean(inProgress);
+						Boolean inProgress = (Boolean)taskJSON.get(TASK_INPROGRESS);
+						//boolean inProgressBoo = Boolean.parseBoolean(inProgress);
 						String color = (String)taskJSON.get(TASK_COLOR);
 						
-						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, taskThread, inProgressBoo, taskPrivacyValue, color));
+						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, comment, inProgress, taskPrivacyValue, color));
 					}
 
 
@@ -139,15 +133,7 @@ public class DataLoader extends DataConstants {
 					e.printStackTrace();
 				}
 				return null;
-
-
 	}
-		
-	
-
-
-
-
 }
 
 
