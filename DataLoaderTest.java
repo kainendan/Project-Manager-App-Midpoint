@@ -14,7 +14,7 @@ public class DataLoaderTest {
 	
 	@BeforeEach
 	public void setup() {
-		UserList.clear();
+		UserList.getInstance().getUserList().clear();
 		UserList.addUser("jb","1234","Josh","bailey","jb@gmail.com",1);
 		UserList.addUser("jb","1234","Josh","bailey","jb@gmail.com",1);
 		DataWriter.saveUsers();
@@ -28,21 +28,21 @@ public class DataLoaderTest {
 	
 	
 	@Test
-	void testGetUsersSize() {
-		userList = DataLoader.getUserList();
+	public void testGetUsersSize() {
+		userList = DataLoader.GetUsers();
 		assertEquals(2, userList.size());
 	}
 
 	@Test
-	void testGetUsersSizeZero() {
+	public void testGetUsersSizeZero() {
 		UserList.getInstance().getUserList().clear();
 		DataWriter.saveUsers();
 		assertEquals(0, userList.size());
 	}
 	
 	@Test
-	void testGetUserFirstUserName() {
-		userList = DataLoader.getUserList();
+	public void testGetUserFirstUserName() {
+		userList = DataLoader.GetUsers();
 		assertEquals("asmith", userList.get(0).getUserName());
 	}
 
