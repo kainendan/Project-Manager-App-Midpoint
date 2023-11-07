@@ -1,10 +1,14 @@
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.ArrayList;
 =======
 //Written by Ben Hendrix
 >>>>>>> cca3e032ed82ff48be69394b8a8362929eefb255
+=======
+//Written by Ben Hendrix
+>>>>>>> 0194272978e535c3478fba58e1cfef84ca3da90a
 
 public class ColumnTest {
     
@@ -32,6 +36,7 @@ public class ColumnTest {
 
     @Test
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void testGetColumnName() {
         Column column = new Column("Backlog");
         assertEquals("Backlog", column.getColumnName());
@@ -40,6 +45,8 @@ public class ColumnTest {
     @Test
 =======
 >>>>>>> cca3e032ed82ff48be69394b8a8362929eefb255
+=======
+>>>>>>> 0194272978e535c3478fba58e1cfef84ca3da90a
     public void testRemoveTask() {
         Column column = new Column("Backlog");
         column.addTask("Task 1", "Task 1 Description", "User 1");
