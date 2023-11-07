@@ -57,10 +57,12 @@ public class Project{
         return projectAuthor;
     }
 
+    // adds column to project, tester checks name to see column was created
     public void addColumn(Column column) {
         columns.add(column);
     }
 
+    // adds comment to project, tester checks author, text, and date to see comment was created
     public void addComment(Comment comment) {
         projectThread.add(comment);
     }
