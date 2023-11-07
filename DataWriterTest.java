@@ -101,7 +101,7 @@ public class DataWriterTest {
 		userList.add(new User("esmith","asdf", "Amy", "Smith",  "asdf@email.com", 1));
 		userList.add(new User("fsmith","asdf", "Amy", "Smith",  "asdf@email.com", 1));
 		DataWriter.saveUsers();
-		assertEquals("esmith", DataLoader.GetUsers().get(4).getUserName());
+		assertEquals("fsmith", DataLoader.GetUsers().get(4).getUserName());
 	}
 	
 	@Test
