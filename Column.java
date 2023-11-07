@@ -2,7 +2,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 /*
  * This class is used to create a column object, which is a list of task objects.
  */
@@ -59,7 +58,6 @@ public class Column {
      * @param taskDesc
      * @param taskAuthor
      */
-    @Test
     public void addTask(String taskName, String taskDesc, String taskAuthor) {
         tasks.add(new Task(taskName, taskDesc, 0, Category.BUG, null, false, 0, taskAuthor));
     }
