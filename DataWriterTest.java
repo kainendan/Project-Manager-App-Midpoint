@@ -58,15 +58,39 @@ public class DataWriterTest {
 
     @Test
     void testWritingOneProject() {
+        projectList.add(new Project("Project", "Project Desc", "ProjectAuthor"));
 
+    }
+
+    @Test
+    void testWritingEmptyProject() {
+        projectList.add(new Project("", "", ""));
+    }
+
+    @Test
+    void testWritingNullProject() {
+        projectList.add(new Project(null, "", ""));
+    }
+     @Test
+    void testWritingEmptyTask() {
+        comment.add(new Comment("", "", ""));
+        taskList.add(new Task("", "", 0, Category.BUG, comment, false, 0, null));
+    }
+	
+    @Test
+    void testWritingNullTask() {
+        comment.add(new Comment("N/A", "N/A", "N/A"));
+        taskList.add(new Task(null, "Task2Desc", 0, Category.BUG, comment, false, 0, null));
     }
 	
     @Test
     void WritingOneTask() {
 
-        comment.add(new Comment("N/A", "N/A", "N/A"));
 
+        comment.add(new Comment("N/A", "N/A", "N/A"));
+        taskList.add(new Task("Task1", "Task1Desc", 0, Category.BUG, comment, false, 0, null));
     }
+
 
 	@Test
 	void testWritingFiveUsers() {
