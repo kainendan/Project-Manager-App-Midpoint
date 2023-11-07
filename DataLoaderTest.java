@@ -15,8 +15,8 @@ public class DataLoaderTest {
 	@BeforeEach
 	public void setup() {
 		UserList.clear();
-		UserList.addUser(new User(UUID.randomUUID(),"jb","1234","Josh","bailey","jb@gmail.com",1));
-		UserList.addUser(new User(UUID.randomUUID(),"jb","1234","Josh","bailey","jb@gmail.com",1));
+		UserList.addUser("jb","1234","Josh","bailey","jb@gmail.com",1);
+		UserList.addUser("jb","1234","Josh","bailey","jb@gmail.com",1);
 		DataWriter.saveUsers();
 	}
 	
