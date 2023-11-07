@@ -15,6 +15,9 @@ public class DataWriterTest {
     // This will mostly be used for testing purposes
     private TaskList task = TaskList.getInstance();
 	private ArrayList<User> userList = users.getUserList();
+    private ArrayList<Project> projectList = project.getProjectList();
+    private ArrayList<Task> taskList = task.geTasksList();
+    private ArrayList<Comment> comment = new ArrayList<Comment>();
 	
 	@BeforeEach
 	public void setup() {
@@ -40,7 +43,9 @@ public class DataWriterTest {
 	@Test
 	void testWritingZeroUsers() {
 		userList = DataLoader.GetUsers();
-        taskList
+        projectList = DataLoader.GetProjects();
+        taskList = DataLoader.GetTask();
+
 		assertEquals(0, userList.size());
 	}
 
@@ -50,7 +55,19 @@ public class DataWriterTest {
 		DataWriter.saveUsers();
 		assertEquals("asmith", DataLoader.GetUsers().get(0).getUserName());
 	}
+
+    @Test
+    void testWritingOneProject() {
+
+    }
 	
+    @Test
+    void WritingOneTask() {
+
+        comment.add(new Comment("N/A", "N/A", "N/A"));
+
+    }
+
 	@Test
 	void testWritingFiveUsers() {
 		userList.add(new User("bsmith","asdf", "Amy", "Smith",  "asdf@email.com", 1));
