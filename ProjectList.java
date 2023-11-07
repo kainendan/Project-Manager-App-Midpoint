@@ -37,14 +37,16 @@ public class ProjectList {
      * @param projectName
      * @param projectDesc
      * @param projectAuthor
+     * adds project to the projectList, tester checks name, description, and author to see project was created
      */
     public static void addProject(String projectName, String projectDesc, String projectAuthor) {
         projects.add(new Project(projectName, projectDesc, projectAuthor));
     }
+
+    // adds task, tester checks all variables to see task was created
     public static void addTask(String taskName, String taskDesc, int taskPrio, Category taskCategory, ArrayList<Comment> taskThread, boolean inProgress, int taskPrivacy, String color) {
         tasks.add(new Task(taskName, taskDesc, taskPrio, taskCategory, taskThread, inProgress, taskPrivacy, color));
     }
-
 
     public ArrayList<Task> geTasksList() {
         return tasks;
