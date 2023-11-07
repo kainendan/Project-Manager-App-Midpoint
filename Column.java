@@ -59,7 +59,6 @@ public class Column {
      * @param taskDesc
      * @param taskAuthor
      */
-    @Test
     public void addTask(String taskName, String taskDesc, String taskAuthor) {
         tasks.add(new Task(taskName, taskDesc, 0, Category.BUG, null, false, 0, taskAuthor));
     }
@@ -68,7 +67,6 @@ public class Column {
      * Remove a task from the column
      * @param taskName
      */
-    @Test
     public void removeTask(String taskName) {
         for(Task task : tasks) {
             if(task.getTaskName().equals(taskName)) {

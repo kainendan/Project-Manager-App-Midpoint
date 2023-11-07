@@ -41,7 +41,6 @@ public class UserList {
      * @param email
      * @param privacyLevel
      */
-    @Test
     public static void addUser(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
         users.add(new User(userName, password, firstName, lastName, email, privacyLevel));
         
@@ -53,7 +52,6 @@ public class UserList {
      * @param password
      * @return true if the user match the parameters
      */
-    @Test
     public static boolean isValidLogin(String userName, String password) {
         for(User user : users) {
             if(user.getUserName().equals(userName) && user.getPassword().equals(password)) {
@@ -68,7 +66,6 @@ public class UserList {
      * @param userName
      * @return the user
      */
-    @Test
     public static User getUser(String userName) {
         for(User user : users) {
             if(user.getUserName().equals(userName)) {
@@ -81,7 +78,6 @@ public class UserList {
     /**
      * logs out user and writers user info
      */
-    @Test
     public void logout() {
         DataWriter.saveUsers();
         DataWriter.saveProjects();
