@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.reporting.shadow.org.opentest4j.reporting.events.core.Data;
 public class DataWriterTest {
 	private UserList users = UserList.getInstance();
     private ProjectList project = ProjectList.getInstance();
@@ -61,28 +62,37 @@ public class DataWriterTest {
     @Test
     void testWritingOneProject() {
         projectList.add(new Project("Project", "Project Desc", "ProjectAuthor"));
-
+        DataWriter.saveProjects();
+        assertEquals("Project", DataLoader.GetProjects().get(0).getProjectName());
     }
 
     @Test
     void testWritingEmptyProject() {
         projectList.add(new Project("", "", ""));
+         DataWriter.saveProjects();
+         assertEquals("", DataLoader.GetProjects().get(0).getProjectName());
     }
 
     @Test
     void testWritingNullProject() {
         projectList.add(new Project(null, "", ""));
+        DataWriter.saveProjects();
+        assertEquals(null, DataLoader.GetProjects().get(0).getProjectName());
     }
      @Test
     void testWritingEmptyTask() {
         comment.add(new Comment("", "", ""));
         TaskList.addTask("", "", 0, Category.BUG, comment, false, 0, null);
+        DataWriter.saveTasks();
+         assertEquals("", DataLoader.GetProjects().get(0).getProjectName());
     }
 	
     @Test
     void testWritingNullTask() {
         comment.add(new Comment("N/A", "N/A", "N/A"));
         TaskList.addTask(null, "Task2Desc", 0, Category.BUG, comment, false, 0, null);
+        DataWriter.saveTasks();
+        assertEquals(null, DataLoader.GetTask().get(0).getTaskName());
     }
 	
     @Test
@@ -90,6 +100,8 @@ public class DataWriterTest {
 
         comment.add(new Comment("N/A", "N/A", "N/A"));
         TaskList.addTask("Task1", "Task1Desc", 0, Category.BUG, comment, false, 0, "#000000");
+        DataWriter.saveTasks();
+         assertEquals("Task1", DataLoader.GetTask().get(0).getTaskName());
     }
 
 
