@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * This class is used to create a column object, which is a list of task objects.
  */
 public class Column {
+    private String taskName;
+    private String taskDesc;
+    private String taskAuthor;
+    
     
     public ArrayList<Task> backlogList() {
         ArrayList<Task> backlogList = new ArrayList<Task>();
@@ -62,7 +66,10 @@ public class Column {
      */
     @Test
     public void addTask(String taskName, String taskDesc, String taskAuthor) {
-        tasks.add(new Task(taskName, taskDesc, 0, null, null, false, 0, taskAuthor));
+        this.taskName = taskName;
+        this.taskDesc = taskDesc;
+        this.taskAuthor = taskAuthor;
+        tasks.add(new Task(taskName, taskDesc, 0, Category.BUG, null, false, 0, taskAuthor));
     }
 
     /**
