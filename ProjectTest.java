@@ -32,4 +32,17 @@ public class ProjectTest {
         assertEquals("Test Comment", comment.getText());
         assertEquals("Test Date", comment.GetDate());
     }
+
+    //tests printing the board
+    @Test
+    public void testPrintBoard() {
+        Project project = new Project("Test Project", "Test Description", "Test Author");
+        Column column = new Column("Test Column");
+        project.addColumn(column);
+        Task task = new Task("Test Task", "Test Description", 0, null, null, false, 0, "Test Author");
+        column.addTask(task);
+        project.printBoard();
+        assertEquals("Test Column", column.getColumnName());
+        assertEquals("Test Task", task.getTaskName());
+    }
 }
