@@ -1,5 +1,6 @@
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
+//Written by Ben Hendrix
 
 public class ColumnTest {
     
