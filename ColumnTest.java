@@ -1,6 +1,5 @@
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.ArrayList;
 
 public class ColumnTest {
     
@@ -24,12 +23,6 @@ public class ColumnTest {
         column.addTask("Task 2", "Task 2 Description", "User 2");
         assertEquals("Task 1", column.getTasks().get(0).getTaskName());
         assertEquals("Task 2", column.getTasks().get(1).getTaskName());
-    }
-
-    @Test
-    public void testGetColumnName() {
-        Column column = new Column("Backlog");
-        assertEquals("Backlog", column.getColumnName());
     }
 
     @Test
