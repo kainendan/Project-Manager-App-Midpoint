@@ -49,17 +49,6 @@ public class ProjectApplication {
      * @param password The password of the user.
      * @return The User object if login is successful, repeat the login process otherwise, exit if the user chooses to.
      */
-<<<<<<< HEAD
-    public User login(String username, String password) {
-<<<<<<< HEAD
-        // Implementation details for login.
-        // Replace with actual logic.
-        return null; // Placeholder return value.
-=======
-       
-        return null; 
->>>>>>> refs/remotes/origin/main
-=======
     public void logIn() {
         UserList userList = UserList.getInstance();
 
@@ -73,7 +62,6 @@ public class ProjectApplication {
             System.out.println("Invalid login. Please try again.");
             logIn();
         }
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
@@ -81,21 +69,9 @@ public class ProjectApplication {
      * @param prompt
      * @return
      */
-<<<<<<< HEAD
-    public User signUp() {
-<<<<<<< HEAD
-        // Implementation details for user signup.
-        // Replace with actual logic.
-        return new User(); // Placeholder return value.
-=======
-        //return new User();
-        return null; 
->>>>>>> refs/remotes/origin/main
-=======
     private String getField(String prompt) {
         System.out.println(prompt + ": ");
         return scanner.nextLine();
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
@@ -103,17 +79,6 @@ public class ProjectApplication {
      *
      * @return A list of all projects.
      */
-<<<<<<< HEAD
-    public ArrayList<Project> getAllProjects() {
-<<<<<<< HEAD
-        // Implementation details for getting all projects.
-        // Replace with actual logic.
-        return new ArrayList<>(); // Placeholder return value.
-=======
-      
-        return new ArrayList<>(); 
->>>>>>> refs/remotes/origin/main
-=======
     public void getAllProjects() {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
@@ -138,7 +103,6 @@ public class ProjectApplication {
         ProjectList.addProject(projectName, projectDesc, projectAuthor);
 
         return new Project(projectName, projectDesc, projectAuthor);
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
@@ -147,16 +111,6 @@ public class ProjectApplication {
      * @return A list of matching projects.
      */
     public ArrayList<Project> findProject() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // Implementation details for finding projects.
-        // Replace with actual logic.
-        return new ArrayList<>(); // Placeholder return value.
-=======
-        
-        return new ArrayList<>(); 
->>>>>>> refs/remotes/origin/main
-=======
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
 
@@ -171,7 +125,6 @@ public class ProjectApplication {
         }
 
         return matchingProjects;
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
     }
 
     /**
@@ -180,36 +133,6 @@ public class ProjectApplication {
      * @param projectName The name of the project to be opened.
      * @return True if the project is opened successfully, false otherwise.
      */
-<<<<<<< HEAD
-    public User createAccount(String firstName, String lastName) {
-<<<<<<< HEAD
-        // Implementation details for creating a user account.
-        // Replace with actual logic.
-        return new User(); // Placeholder return value.
-=======
-        //return new User();
-        return null;
->>>>>>> refs/remotes/origin/main
-    }
-
-    /**
-     * Creates a new project.
-     *
-     * @param projectName The name of the project.
-     * @param projectDesc The description of the project.
-     * @return True if the project is created successfully, false otherwise.
-     */
-    public boolean createProject(String projectName, String projectDesc) {
-<<<<<<< HEAD
-        // Implementation details for creating a project.
-        // Replace with actual logic.
-        return false; // Placeholder return value.
-=======
-     
-        return false; 
->>>>>>> refs/remotes/origin/main
-    }
-=======
     public void openProject() {
         ProjectList projectList = ProjectList.getInstance();
         ArrayList<Project> projects = projectList.getProjectList();
@@ -275,16 +198,21 @@ public class ProjectApplication {
 
     }
 
->>>>>>> 468e4e5847779014b3c9e68b4fcd72847993f065
 
     /**
      * Creates a new task for a project.
      *
      * @return True if the task is created successfully, false otherwise.
      */
-    //public Task createTask(){
-        //ProjectList projectList = ProjectList.getInstance();
-        //ArrayList<Project> projects = projectList.getProjectList();
+    public Task createTask(){
+        Scanner scanner = new Scanner(System.in);
+        TaskList task = TaskList.getInstance();
+        ArrayList<Task> taskList = task.geTasksList();
+        ArrayList<Comment> comment = new ArrayList<Comment>();
+        boolean checker = true;
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+        Column column;
 
         System.out.println("Enter the project name in which you would like to add a task");
         String projectName = scanner.nextLine();
@@ -342,8 +270,8 @@ public class ProjectApplication {
         column.addTask(taskName, taskDesc, taskAuthor);
         TaskList.addTask(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
 
-        //return new Task(taskName, taskDesc, taskAuthor);
-    //}
+        return new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
+    }
 
     /**
      * Creates a new comment for a task.
@@ -352,9 +280,19 @@ public class ProjectApplication {
      * @param commentText The text of the comment.
      * @return True if the comment is created successfully, false otherwise.
      */
-    public boolean createComment(String commentText) {
-      
-        return false;
+    public void createComment(ArrayList<Comment> comment) {
+        ProjectList projectList = ProjectList.getInstance();
+        ArrayList<Project> projects = projectList.getProjectList();
+
+        String commentAuth = getField("Enter the comment author");
+        String commentText = getField("Enter the comment text");
+        String commentDate = getField("Enter the comment date");
+        comment.add(new Comment(commentAuth, commentText, commentDate));
+
+    }
+
+    public void printTask() {
+
     }
 
     /**
@@ -363,8 +301,7 @@ public class ProjectApplication {
      * @param taskId The ID of the task to be edited.
      * @param task   The updated task information.
      */
-    public void editTask(int taskId, ArrayList<String> task) {
-       
+    public void editTask(String taskName, ArrayList<String> task) {
+        
     }
 }
-
