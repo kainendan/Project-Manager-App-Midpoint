@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UserList {
     private static UserList userList = null;
@@ -40,7 +41,7 @@ public class UserList {
      * @param privacyLevel
      */
     public static void addUser(String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
-        users.add(new User(userName, password, firstName, lastName, email, privacyLevel));
+        users.add(new User(UUID.randomUUID(),userName, password, firstName, lastName, email, privacyLevel));
         
     }
 
