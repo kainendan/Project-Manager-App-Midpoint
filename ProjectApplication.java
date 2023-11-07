@@ -267,7 +267,9 @@ public class ProjectApplication {
                 }
         }
        
-        column.addTask(taskName, taskDesc, taskAuthor);
+        Task currenTask = new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
+        column.addTask(currenTask);
+        
         TaskList.addTask(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
 
         return new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
