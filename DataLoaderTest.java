@@ -14,7 +14,11 @@ public class DataLoaderTest {
 	
 	@BeforeEach
 	public void setup() {
+<<<<<<< HEAD
 		userList.clear();
+=======
+		UserList.getInstance().getUserList().clear();
+>>>>>>> fa2db3f8238a5779fe80e13e38497c37e59a70be
 		UserList.addUser("jb","1234","Josh","bailey","jb@gmail.com",1);
 		UserList.addUser("jb","1234","Josh","bailey","jb@gmail.com",1);
 		DataWriter.saveUsers();
@@ -43,8 +47,12 @@ public class DataLoaderTest {
 	@Test
 	public void testGetUserFirstUserName() {
 		userList = DataLoader.GetUsers();
+<<<<<<< HEAD
 
     }
+=======
+	
+>>>>>>> fa2db3f8238a5779fe80e13e38497c37e59a70be
 
 
 

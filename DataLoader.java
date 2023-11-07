@@ -119,11 +119,11 @@ public class DataLoader extends DataConstants {
 							comment.add(new Comment(CommentAuth, CommentText, ComDate));
 						}
 						
-						Boolean inProgress = (Boolean)taskJSON.get(TASK_INPROGRESS);
-						//boolean inProgressBoo = Boolean.parseBoolean(inProgress);
+						String inProgress = (String)taskJSON.get(TASK_INPROGRESS);
+						boolean inProgressBoo = Boolean.parseBoolean(inProgress);
 						String color = (String)taskJSON.get(TASK_COLOR);
 						
-						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, comment, inProgress, taskPrivacyValue, color));
+						tasks.add(new Task(id, taskName, taskDes, taskPrioValue, taskCategory, comment, inProgressBoo, taskPrivacyValue, color));
 					}
 
 
