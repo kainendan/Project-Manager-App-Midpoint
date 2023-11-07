@@ -1,7 +1,3 @@
-/// Nick Arboscello
-//import org.json.simple.JSONObject;
-//import org.json.simple.JSONValue;
-
 import java.util.UUID;
 
 public class User {
@@ -22,6 +18,7 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
+
     public User(UUID id, String userName, String password, String firstName, String lastName, String email, int privacyLevel) {
         this.id = id;
         this.userName = userName;
@@ -31,10 +28,7 @@ public class User {
         this.email = email;
         this.privacyLevel = privacyLevel;
     }
-    
 
-
-    // Getters for the user's properties
     public UUID getId() {
         return id;
     }
@@ -60,24 +54,11 @@ public class User {
     }
 
     public String getPrivacyLevel() {
-        return ""+privacyLevel+"";
+        return Integer.toString(privacyLevel);
     }
 
     @Override
     public String toString() {
-        return "User [userId=" + UUID.randomUUID() + ", username=" + userName + "]";
+        return "User [userId=" + id + ", username=" + userName + "]";
     }
-
-    // Convert the User object to a JSON representation
-    //public JSONObject toJSON() {
-        //JSONObject jsonUser = new JSONObject();
-        //jsonUser.put("userName", userName);
-        //jsonUser.put("password", password);
-        //jsonUser.put("firstName", firstName);
-        //jsonUser.put("lastName", lastName);
-        //jsonUser.put("email", email);
-        //jsonUser.put("privacyLevel", privacyLevel);
-        //return jsonUser;
-    //}
-
 }
