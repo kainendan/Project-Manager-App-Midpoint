@@ -1,9 +1,7 @@
-// Nick Arboscello
+/// Nick Arboscello
 //import org.json.simple.JSONObject;
 //import org.json.simple.JSONValue;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.UUID;
 
 public class User {
@@ -83,4 +81,3 @@ public class User {
     //}
 
 }
-

@@ -1,5 +1,6 @@
 //Nick Arboscello
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The ProjectApplication class represents the main application for managing projects, users, and related functionality.
