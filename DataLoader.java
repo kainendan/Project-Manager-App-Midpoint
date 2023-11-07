@@ -85,6 +85,11 @@ public class DataLoader extends DataConstants {
 	 * grabs the Task from the json file
      * @return the Tasks from a json file into a arraylist
      */
+	/*
+	 * Note for the future We need to be able
+	 *  to give task to projects list and remove taskList
+	 * so we can work with any errors
+	 */
 	public static ArrayList<Task> GetTask() {
 		 ArrayList<User> users = new ArrayList<User>();
 
