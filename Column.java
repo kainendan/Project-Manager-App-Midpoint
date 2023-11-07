@@ -56,25 +56,18 @@ public class Column {
 
     /**
      * Add a task to the column
-     * @param taskName
-     * @param taskDesc
-     * @param taskAuthor
+     * @param task
      */
-    public void addTask(String taskName, String taskDesc, String taskAuthor) {
-        tasks.add(new Task(taskName, taskDesc, 0, Category.BUG, null, false, 0, taskAuthor));
+    public void addTask(Task task) {
+        tasks.add(task);
     }
 
     /**
      * Remove a task from the column
-     * @param taskName
+     * @param task
      */
-    public void removeTask(String taskName) {
-        for(Task task : tasks) {
-            if(task.getTaskName().equals(taskName)) {
-                tasks.remove(task);
-                break;
-            }
-        }
+    public void removeTask(Task task) {
+        tasks.remove(task);
     }
 
     /**
