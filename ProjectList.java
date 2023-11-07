@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
+
 public class ProjectList {
     private static ProjectList projectList = null;
     private static ArrayList<Project> projects = new ArrayList<>();
+    private static ArrayList<Task> tasks = new ArrayList<>();
 
     /**
      * Constructor for the list of projects
@@ -38,6 +40,14 @@ public class ProjectList {
      */
     public static void addProject(String projectName, String projectDesc, String projectAuthor) {
         projects.add(new Project(projectName, projectDesc, projectAuthor));
+    }
+    public static void addTask(String taskName, String taskDesc, int taskPrio, Category taskCategory, ArrayList<Comment> taskThread, boolean inProgress, int taskPrivacy, String color) {
+        tasks.add(new Task(taskName, taskDesc, taskPrio, taskCategory, taskThread, inProgress, taskPrivacy, color));
+    }
+
+
+    public ArrayList<Task> geTasksList() {
+        return tasks;
     }
 
 }
