@@ -10,24 +10,37 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 public class DataWriterTest {
 	private UserList users = UserList.getInstance();
+    private ProjectList project = ProjectList.getInstance();
+    //Task List will be remove and and moved to projectList in the future 
+    // This will mostly be used for testing purposes
+    private TaskList task = TaskList.getInstance();
 	private ArrayList<User> userList = users.getUserList();
 	
 	@BeforeEach
 	public void setup() {
 		UserList.getInstance().getUserList().clear();
+        TaskList.getInstance().geTasksList().clear();
+        ProjectList.getInstance().getProjectList().clear();
 		DataWriter.saveUsers();
+        DataWriter.saveProjects();
+        DataWriter.saveTasks();
 	}
 	
 	@AfterEach
 	public void tearDown() {
-		users.getInstance().getUserList().clear();
+		UserList.getInstance().getUserList().clear();
+        TaskList.getInstance().geTasksList().clear();
+        ProjectList.getInstance().getProjectList().clear();
 		DataWriter.saveUsers();
+        DataWriter.saveProjects();
+        DataWriter.saveTasks();
 	}
 	
 	
 	@Test
 	void testWritingZeroUsers() {
 		userList = DataLoader.GetUsers();
+        taskList
 		assertEquals(0, userList.size());
 	}
 
