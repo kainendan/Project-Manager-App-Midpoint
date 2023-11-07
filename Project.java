@@ -1,5 +1,4 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -65,7 +64,6 @@ public class Project{
         projectThread.add(comment);
     }
 
-    @Test
     public void printBoard() {
         for (Column column : columns) {
             System.out.println(column.getColumnName());

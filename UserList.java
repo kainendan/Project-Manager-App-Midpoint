@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import org.junit.jupiter.api.Test;
-
 public class UserList {
     private static UserList userList = null;
     private static ArrayList<User> users = new ArrayList<>();
