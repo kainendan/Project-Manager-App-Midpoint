@@ -267,9 +267,9 @@ public class ProjectApplication {
                 }
         }
        
-        Task currenTask = new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
-        column.addTask(currenTask);
-        
+        Task currentTask = new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
+        column.addTask(currentTask);
+
         TaskList.addTask(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);
 
         return new Task(taskName, taskDesc, taskPrio, cat, comment, inProgres, taskPriv, color);

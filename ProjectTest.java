@@ -34,6 +34,7 @@ public class ProjectTest {
     }
 
     //tests printing the board
+    //Test by Ben Hendrix
     @Test
     public void testPrintBoard() {
         Project project = new Project("Test Project", "Test Description", "Test Author");
